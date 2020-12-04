@@ -20,7 +20,9 @@ nohup /usr/local/tsa/bidmgr/seupdate.sh -d3 -a  1394 --accounts --groups --listi
 
 nohup /usr/local/tsa/bidmgr/googlemcc.sh -d3 -U 1438 --date 2020-10-25 -z America/New_York &> /tmp/discrep_rerun_googlemcc.out &
 
-nohup /usr/local/tsa/bidmgr/googlemcc.sh -admax -d3 -U 885 --date 2020-11-16 -z America/New_York & >/tmp/discrep_rerun_googlemcc_admax.out &
+nohup /usr/local/tsa/bidmgr/googlemcc.sh -admax -d3 -U 1725 --date 2020-11-28 -z America/Chicago & >/tmp/discrep_rerun_googlemcc_admax.out &
+
+/usr/local/tsa/bidmgr/googlemcc.sh -admax -d3 --date 2020-11-28 -z America/Chicago
 
 nohup  /usr/local/tsa/bidmgr/sesummarize.sh -d3 -a 1021,1028 --date 2020-05-10 --distribution 3      &> /tmp/discrep_rerun_sesumm.out &
 
@@ -68,7 +70,7 @@ pit:
 
 	/usr/local/tsa/bidmgr/admax.sh -d3 -a 429 -z America/Los_Angeles --date 2020-07-20
 	/usr/local/tsa/bidmgr/admax.sh -d3 -a 668 -z America/Chicago --date 2020-01-15
-	/usr/local/tsa/bidmgr/admax.sh -d3 -a 702 -z America/New_York --date 2020-11-16
+	/usr/local/tsa/bidmgr/admax.sh -d3 -a 1160 -z America/New_York --date 2020-12-01
 
  
  nohup ./AMLDiscrepancyResolver_noseupdate.sh -a  928 -U 1141 -T 2020-12-09 -z America/Chicago &> /tmp/discrep_resolver.log &
@@ -259,6 +261,9 @@ groovy /home/amlops/ops-scripts/groovy/reports/account-level-order-data.groovy -
 sudo /home/amlops/ops-scripts/reports/performance/report-account-level-performance-data.sh  -h aml12-mysql1 -u spike -p tar63t -o /var/local/tsa/Mercury_Reports/sbgtv/ -r sbgtv -d 2020-04-21
 	
 nohup sudo /home/amlops/ops-scripts/reports/budget/report-account-level-carryover-data.sh -h aml17-mysql1 -u spike -p tar63t -o /var/local/tsa/Mercury_Reports/rockbrand/ -r rockbrand -d 2020-09-18 &
+
+
+nohup sudo /home/amlops/ops-scripts/reports/budget/report-account-level-carryover-data.sh -h aml17-mysql1 -u spike -p tar63t -o /tmp/ -r hughesnet -d 2020-12-02 &
 
 # CMG Stack level reports
 sudo /home/amlops/ops-custom-scripts/cmg_custom_reports/cmg_report-account-level-carryover-data.sh -h aml22-mysql1 -u spike -p tar63t -o /var/local/tsa/Mercury_Reports/CMG/  >> /tmp/cmg_report-account-level-carryover-data.log 2>&1

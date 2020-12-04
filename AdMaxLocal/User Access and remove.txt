@@ -1,6 +1,10 @@
 Connect to mysql database:
  1. ssh <mysql server> 
  2. mysql -uspike -ptar63t -h<mysql server>
+
+Support database mysql server:
+================================
+mysql -u techOps_services -ptar63t -h 127.0.0.1 support_dashboard
 =============
 General Info of MYSQL database:
 SHOW GLOBAL STATUS;
@@ -750,9 +754,6 @@ select fbcr.startTime as Date,a.description as MerchantUUID,sum(fbcr.imps) as Im
 
 delete from admaxcampaign if the campaign is not present in the external parent campaign.
 
-Support database mysql server:
-================================
-mysql -u techOps_services -ptar63t -h 127.0.0.1 support_dashboard
 
 Internal Report:
 =================
