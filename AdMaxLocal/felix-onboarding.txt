@@ -1,0 +1,228 @@
+[amlops@aml-ops-monman2 groovy]$ groovy onboard.groovy -d DEBUG -h aml12-front1 -l 8080 -u admin+tsa@thesearchagency.com -p admin -r thesearchagency -rr felix -rbu https://felix.admaxlocal.com/reseller/ -ru https://felix.admaxlocal.com/reseller/ -rm 0 -rmin 0 -rtz America/New_York -rdn "Felix Calls LLC" -rp 18000000 -rcn "AML Operations Admin" -rcp 18000000 -rce kirtiranjan.sahoo@admaxlocal.com -rcd US -rcc USD -rpn "felix" -rl en_US -rsp "18000000" -mdt "Felix Calls LLC" -mde false -rg en -tu felix/tos -pu felix/privacy
+
+ 9bc34e54-7880-4d84-80eb-4817a9e87eb7 
+ com.thesearchagency/9bc34e54-7880-4d84-80eb-4817a9e87eb7 
+ d58614a1-9920-4033-b24a-cf86c659985b 
+ ef43976f-3d54-455a-b26f-17d43d1b8eea 
+ acbj 
+ acbj    
+ 2018-06-18 14:02:27 
+ c7542d20-f6ba-4784-842b-9202a92190e2 
+ TSA Administrator 
+ 2018-06-18 14:02:27 
+ c7542d20-f6ba-4784-842b-9202a92190e2 
+ TSA Administrator 
+ T      
+ https://acbj.admaxlocal.com/reseller/ 
+ 18000000 
+ AML Operations Admin 
+ 18000000      
+ mukes72@gmail.com 
+
+groovy onboard.groovy -d DEBUG -h aml17-front1 -l 8080 -u admin+tsa@thesearchagency.com -p admin -r thesearchagency -rr hughesnet -rbu  https://hughesnet.admaxlocal.com/reseller/ -ru https://hughesnet.admaxlocal.com/reseller/ -rm 0 -rmin 0 -rtz America/New_York -rdn "Hughesnet Dashboard" -rp 18000000 -rcn "AML Operations Admin" -rcp 18000000 -rce kirtiranjan.sahoo@admaxlocal.com -rcd US -rcc USD -rpn "hughesnet" -rl en_US -rsp "18000000" -mdt "Hughesnet Dashboard" -mde false -rg en -tu hughesnet/tos -pu hughesnet/privacy
+
+ajctest
+acbjtest
+
+DEBUG - Provided Options:
+  -d:  DEBUG
+  -h:  aml12-front1
+  -l:  8080
+  -u:  admin+tsa@thesearchagency.com
+  -p:  admin
+  -r:  thesearchagency
+  -rr: felix
+  -rbu: https://felix.admaxlocal.com/reseller/  ,--reseller-base-url <arg
+  -ru: https://felix.admaxlocal.com/reseller/
+  -rm: 0
+  -rmin: 0
+  -rtz: America/New_York
+  -rdn: Felix Calls LLC
+  -rp: 18000000
+  -rcn: AML Operations Admin
+  -rcp: 18000000
+  -rce: kirtiranjan.sahoo@admaxlocal.com
+  -rcd: US
+  -rcc: USD
+  -rpn: felix
+  -rl: en_US
+  -rsp: 18000000
+  -mdt: Felix Calls LLC
+  -mde: false
+  -rg: en
+  -tu: felix/tos
+  -pu: felix/privacy
+If this is a multi distribution system that includes Google, enter the Google budget allocation (example: .8):
+If this is a multi distribution system that includes Bing, enter the Bing budget allocation (example: .2):
+If this is a multi distribution system that includes Yahoo Japan, enter the YJ budget allocation (example: .5):
+If Google estimates should be used in place of Bing enter a proportion between 0 an 1 (example: .25). Otherwise leave blank and Bing estimates will come from the Bing API:
+Would you like to set distribution specific markups? (y/n) n
+DEBUG - Base path: http://aml12-front1:8080/sapi/rest/
+DEBUG - Retrieved session token: ACUB2IBDMYLO5ZGETZ2AUYKJX5SKU5EQHMD4327UH5YXC2TTV2SIRPFWPZUG5VZN4GDDFLWKUZ4JOX4HHJHE5NMN4OEVYSUZBE5YFTQ4FTXXCQNT27HX5W7TBMRE65HQK3LCYOLPPEDJOFABMWR5QBO64Z3IVHWYA7FDQGLOIB3J4Z32IQN5R6OZPOOYE54T3R4B3FIJCVF5KJGJOWPPD6L3PYRU7S7HSDR6VYJ2PYGD2HC3C7QNC2D365T5UISJSFQCZOGERD3OND7UGKXA5KVRKFL6IQTBHNRP7BXBDJ7BB5LETXDNQXERTDJA3ISBNMKOHR6OQZHGSWNBA2TL2MQEIEBSMIRPTD6IRHESAZ54XGJARJ4XRTLXQGEN4FBXHFWP2S6ZMYNQWXNAOLHBHIJF47NGCAZYTIDLUAAC4WVAFNECFREJOPJTUZYVVNVYTQEY3B2DBG5DZIWNY5Q4BQ2SZSVZKUROXUHEN756BLQTLP2E2LUY4AFIZQFI2TX5F3QZJFTQRGWPDJJ6ZNZC5E552WC3PJITENMGW3JEDOWQHMYNPNUXQAVQDHKQQJPUIYCEV2MTBLEU6MQYG7WSKOU5WTCYWRBZCQ67ZQIQD7KDEGKXGSUBUAWDTXUG6TWXQNYX57GERSFBMI44FEIFFSNOFUYF2CDXLWIH2WJXUY6WBQZIJISLHA7M7GWHHAW4PHH6732HY3EACTREN53PJ2HIPDG37ATW5OM2GVO7RWQBUNF7EZZZR7GXULQ6ISRQJAH2LO4DYOQKTMPOISHSDPMPGJXMLXD5RV7I4KG5V4WFQMY6D2MWQFBFIWF4M35HC6QBDEZHHELAERHURGSCVOBRT7O75JJZ5GIK73HQ5F4GDYY6557HCBSFSF267VBY5L2UYB5RKZMRWC25ZKXFUJ7HWVL5AZ6C5YNXVMBXJLFB3NOMTWX5MGY5SNZYE6KLMX43MO4PFS5PIG4WKOU3DL42PDVU5EZ5P2DRQCZJJV4P2NWJRX45IVSR62J3RUHJMAZS65ABZBTXUHTHT3YD36KNBNI5GELY5BG7C2ETG72EFZJPHXIR4N3L62BLVDNIVPCJMYJFBO6JFV5JEPX62CK3IQOE2QI3BNOIMMBVBN44E2O2FQBYMVK2KDMQVGBUYMU6P7DDHOWRU6DNDVU2XRDTRMN62HU7V75MUJU3MOFMYOYILQLXA5ODNFAQL3VCV5BPIKD4XN5PYYJJK4TKB2NAOPQAR6DBZ5XPVLPFNC3KXEZY3UBHB6CK3MY57AT6666W27NW4ESSCDOD5SSGNOT7PT5KA3KSDFANKZXZPMLAJUUJ37TLDS45XTAO4R4ZRTYQFTPZMVILEMFDNPQTRCB6EW27ORRVN5CWOO2FHHUJGB2Z65PHPKPFDUACKL477NLNQWH34I2WK2HL3SW5JCOREQDCQ7BDDYAXGFQNSHBFCNNTEGAYAFXUMCZDGH26COGRX2VXV6OSW6VUGHRCD2O3IE======
+DEBUG - Found 0 resellers for realm[felix]
+INFO - Successfully created reseller[6af214f5-b6c4-4f19-9601-a7303ad7b3a7]
+INFO - Activation email sent
+INFO - Please remember to run setupDistributions.groovy next to set the distribution credentials and properties for the new reseller ( id: 6af214f5-b6c4-4f19-9601-a7303ad7b3a7 ).
+[amlops@aml-ops-monman2 groovy]$
+[amlops@aml-ops-monman2 groovy]$
+[amlops@aml-ops-monman2 groovy]$
+[amlops@aml-ops-monman2 groovy]$
+[amlops@aml-ops-monman2 groovy]$
+[amlops@aml-ops-monman2 groovy]$ groovy setupDistributions.groovy -dh aml12-front1 -dl 8081 -u readwrite -rs 6af214f5-b6c4-4f19-9601-a7303ad7b3a7
+[amlops@aml-ops-monman2 groovy]$ groovy setupDistributions.groovy -dh aml1-front1 -dl 8081 -u readwrite -rs 551664dc-df24-485a-9195-3cc85e86fc5a
+DEBUG - Provided Options:
+  -dh: aml12-front1
+  -dl: 8081
+  -u:  readwrite
+  -rs: 6af214f5-b6c4-4f19-9601-a7303ad7b3a7
+DEBUG - Base path: http://aml12-front1:8081/distribution/rest/
+Enter the password for readwrite:
+
+Would you like to enable distribution "Bing" for reseller 6af214f5-b6c4-4f19-9601-a7303ad7b3a7 ? n
+
+Would you like to enable distribution "Google" for reseller 6af214f5-b6c4-4f19-9601-a7303ad7b3a7 ? y
+Enter a value for credentials field "GOOG_CLIENT_SECRET" : 2UoedBWGRJe7a_4vSw4x3cD-
+Enter a value for credentials field "GOOG_REFRESH_TOKEN" : 1/tN64S6EG6xWQxCyATnsQHw9ynDgMNg3Ic4bC5VIWW8FmbT8tYm2U1OEIvLILjQHg
+Enter a value for credentials field "GOOG_CLIENT_ID" : 465904826061-q9tonj79f7cnc0vlrunlt8ss0s7qjqnj.apps.googleusercontent.com
+Enter a value for credentials field "GOOG_USER_AGENT" : AdMaxLocal AdWords Software TSA PROD - AML12
+
+Are these credentials values correct? [GOOG_USER_AGENT:AdMaxLocal AdWords Software TSA PROD - AML12, GOOG_CLIENT_SECRET:2UoedBWGRJe7a_4vSw4x3cD-, GOOG_CLIENT_ID:465904826061-q9tonj79f7cnc0vlrunlt8ss0s7qjqnj.apps.googleusercontent.com, GOOG_REFRESH_TOKEN:1/tN64S6EG6xWQxCyATnsQHw9ynDgMNg3Ic4bC5VIWW8FmbT8tYm2U1OEIvLILjQHg] y
+
+Would you like to enable distribution "YahooJapan" for reseller 6af214f5-b6c4-4f19-9601-a7303ad7b3a7 ? n
+[amlops@aml-ops-monman2 groovy]$ groovy setupDistributionResellerProperties.groovy -dh aml12-front1 -dl 8081 -u readwrite -rs 6af214f5-b6c4-4f19-9601-a7303ad7b3a7
+
+[amlops@aml-ops-monman2 groovy]$ groovy setupDistributionResellerProperties.groovy -dh aml1-front1 -dl 8081 -u readwrite -rs 551664dc-df24-485a-9195-3cc85e86fc5a
+Setting up command line options ...
+DEBUG - Base path: http://aml12-front1:8081/distribution/rest/
+Enter the password for readwrite:
+
+Would you like to see/change any current Content properties for this reseller? y
+
+Current Content Properties from db ****************
+<None>
+
+Will this reseller use Google? y
+
+Will this reseller use Bing? n
+
+Will this reseller use YahooJapan? n
+
+Current Content Properties ****************
+ce.orderID ->
+ce.orderProfileID ->
+ce.defaultBudget ->
+ce.mobileBidModifier ->
+ce.desktopBidModifier ->
+ce.tabletBidModifier ->
+ce.includeSearchPartners -> true
+ce.parentClientCustomerID ->
+Enter a value for Content Property field "ce.orderID" :  () : 0391-6968-5100
+Enter a value for Content Property field "ce.orderProfileID" :  () : 8803-2257-0424-5806
+Enter a value for Content Property field "ce.defaultBudget" :  () :
+Enter a value for Content Property field "ce.mobileBidModifier" :  () :
+Enter a value for Content Property field "ce.desktopBidModifier" :  () :
+Enter a value for Content Property field "ce.tabletBidModifier" :  () :
+
+Would you like to change ce.includeSearchPartners ? y
+Enter a value for Content Property field "ce.includeSearchPartners" :  (true) : true
+Enter a value for Content Property field "ce.parentClientCustomerID" :  () : 4927723444
+
+Updated Content Properties ****************
+
+ce.orderID -> 0391-6968-5100
+ce.orderProfileID -> 8803-2257-0424-5806
+ce.defaultBudget ->
+ce.mobileBidModifier ->
+ce.desktopBidModifier ->
+ce.tabletBidModifier ->
+ce.includeSearchPartners -> true
+ce.parentClientCustomerID -> 4927723444
+
+Would you like to save these Content properties for this reseller? y
+
+Would you like to see/change any current Algorithm properties for this reseller? y
+
+Current Algorithm Properties from db ****************
+<None>
+
+Enter currency code ([USD, CAD, GBP, AUD, JPY]) : USD
+
+Will this reseller use Google? y
+
+Will this reseller use Bing? n
+
+Current Algorithm Properties ****************
+sabb.biddingEnabled.google -> true
+sabb.bouncePosition.google -> 1.1
+sabb.lowSpendBudgetRatioThreshold.google -> 90
+sabb.highSpendBudgetRatioThreshold.google -> 100
+sabb.defaultBid.google.USD -> 0.60
+sabb.minBid.google.USD -> 0.01
+sabb.maxBid.google.USD -> 50.00
+sabb.bounceBidAdjustment.google.USD -> -0.05
+sabb.maxLowSpendBudgetBidAdjustment.google.USD -> 0.50
+sabb.maxHighSpendBudgetBidAdjustment.google.USD -> -0.05
+sabb.defaultBidAdjustment.google.USD -> -0.05
+sabb.bidAdjustmentThreshold.google.USD -> 0.01
+
+Would you like to change sabb.biddingEnabled.google ?
+
+Would you like to change sabb.bouncePosition.google ?
+
+Would you like to change sabb.lowSpendBudgetRatioThreshold.google ?
+
+Would you like to change sabb.highSpendBudgetRatioThreshold.google ?
+
+Would you like to change sabb.defaultBid.google.USD ?
+
+Would you like to change sabb.minBid.google.USD ?
+
+Would you like to change sabb.maxBid.google.USD ?
+
+Would you like to change sabb.bounceBidAdjustment.google.USD ?
+
+Would you like to change sabb.maxLowSpendBudgetBidAdjustment.google.USD ?
+
+Would you like to change sabb.maxHighSpendBudgetBidAdjustment.google.USD ?
+
+Would you like to change sabb.defaultBidAdjustment.google.USD ?
+
+Would you like to change sabb.bidAdjustmentThreshold.google.USD ?
+
+Updated Algorithm Properties ****************
+
+sabb.biddingEnabled.google -> true
+sabb.bouncePosition.google -> 1.1
+sabb.lowSpendBudgetRatioThreshold.google -> 90
+sabb.highSpendBudgetRatioThreshold.google -> 100
+sabb.defaultBid.google.USD -> 0.60
+sabb.minBid.google.USD -> 0.01
+sabb.maxBid.google.USD -> 50.00
+sabb.bounceBidAdjustment.google.USD -> -0.05
+sabb.maxLowSpendBudgetBidAdjustment.google.USD -> 0.50
+sabb.maxHighSpendBudgetBidAdjustment.google.USD -> -0.05
+sabb.defaultBidAdjustment.google.USD -> -0.05
+sabb.bidAdjustmentThreshold.google.USD -> 0.01
+
+Would you like to save these Algorithm properties for this reseller? y
+
+Would you like to see/change any current Estimate properties for this reseller? n
+
+Would you like to see/change any current GMB properties for this reseller? n
+
+====================================================================================
+
+# tunneling:
+ssh -t -L 9997:localhost:9997 kirti.sahoo@192.168.70.62 ssh -t -L 9997:localhost:8080 kirti.sahoo@aml1-front1
+
+Location for change the host name : C:\Windows\System32\drivers\etc
+#	127.0.0.1       localhost ajctest.admaxlocal.com
+
+http://ajctest.admaxlocal.com:9997/reseller/activate?uuid=8900f23a-fb08-44c4-babe-361477bf8827&resellerId=551664dc-df24-485a-9195-3cc85e86fc5a&token=FVP73FHPCTGUNQXUF2MYZT3T6MBSL4PO3J5J55NHDCTDDZAKMPHHJ6HYB34ND5BIJPINDNGZSO5UUMZ23XQ6XWOIEJSRCB6GVRYHYA575KDTTQXI5KXOATMJUXFSUFUU7GDULXHANHHJSQ6YUZOLCI2WNYKO2UUKIZABIOPQI3CM2XK26GKFHSOPQM765GD5ESYHAUHEHQTBTA2CANUX4NVP6IYXIA4PRYW7DFTVKC64C62XK7GOEJZUJ7E367WZBPHUG2RLM35B7JULHVIYH65IFYC6M76A2RMX2QU6XU3T7F5I4GZA6W7PIQ54ITQGTPS7ZSSGKK2NWRRX4XGWL6L5K4EGKQY5CBXFH64IT5N7EVNYEMLH3WDJ4WLSKNQJLTLQG5MJ5HP2E343DXRXBA6DPU======
+
+
+
+http://felix.admaxlocal.com:9997/reseller/activate?uuid=47c30140-54fc-4bd7-a49f-fdc794860295&resellerId=6af214f5-b6c4-4f19-9601-a7303ad7b3a7&token=ACUB2IBDMYLO5WK2QBE6IUJBGKX2GPAX5NBNCVRVTBE5YN3MOG4BEQTTHU2RMFKO5JVYVLSABWUDRZMEAE4X4VNXID4NHSCDWQOAIQUSZWI75R4A46VRHOOLKUF6T4LQCA73E7Q6H2MJSNQ4EECQ7O446KC4PQM4QEZVHZCEJIKBESHOQO7R77OZLGEGAQJLP5VXDV4VBAQO5VA2L3DMKRDHHNKKI62VGLGZ25CPI3WR3VRMIBM4S6FV3HGT2J4PX45DXG5X4RGKHM3ENQO3EJ6Z6KKO5IGEI7YRSPNKQ45OTRIC5FH7W5TRJP4V2LRHCGSPMU5QRXVGUOEXIL4FG5RTJOK3H62BXXXEU4VWGFQQEJXMX4Q65ZVTDALDJA6WRSGMVEEFXA2U3J5HMEHQRJY7XA======
+
+
+http://urbanairbing.admaxlocal.com:9997/reseller/activate?uuid=0b560234-77a2-41f3-9786-c52f015b34a2&resellerId=2d24cd9e-a9cb-436b-9f90-ae4aba6b629b&token=E6UTUEUQQS5CO7MA2MAMUB24CRR2QMG54AX2SFINV5WZOPO3QDSGWWVV7ALT3V45DXYYCZVV4VFVX2T5ZV5GVZ4CZQZPDLXZ2CZNWZJGCM5373RMA6I43FQOWPBV2AXIFQUPSQREKOUF4ID7UY6E45FUGIZL6TS5WI3UW2UB5IWYJHRM4FHA275SN7GIYI6SLJWTOVI2KEBYTBP7Z6UMJMG5YIVUC6IOZUGTRBJD4HIWIRXMOJZHUQIC2KY6BXC4QZU5B33MKRJYYMRVRNNXOLCSDQZ6N2T7FDYFG6XW4CTUGSZADCLCSGR67EKF7S4MECZVM4CDBP3X2WZJ3VULMLE7YCVJOQ2J76X2FPBRPESHBXSBAGTEFEW5BK6DTQYNEUHDMH23VZTE2HDXBDY7DK233A======

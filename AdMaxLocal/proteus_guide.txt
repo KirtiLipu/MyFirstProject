@@ -1,0 +1,101 @@
+tomcat8/webapps/ :
+
+drwxr-x---  3 root tomcat      4096 Sep 26 06:42 ROOT
+drwxr-x---  5 root tomcat      4096 Sep 26 06:42 manager
+drwxr-x---  5 root tomcat      4096 Sep 26 06:42 host-manager
+drwxr-x---  6 root tomcat      4096 Sep 26 06:42 examples
+drwxr-x--- 14 root tomcat      4096 Sep 26 06:42 docs
+-rw-r--r--  1 root root    20354831 Sep 28 02:35 merchant.war
+drwxr-x---  7 root root        4096 Sep 28 02:35 merchant
+-rw-r--r--  1 root root    78048339 Sep 28 02:35 reseller.war
+drwxr-x---  7 root root        4096 Sep 28 02:38 reseller
+-rw-r--r--  1 root root   106514702 Mar  8 01:15 sapi.war
+drwxr-x---  4 root root        4096 Mar  8 01:32 sapi
+
+front :
+
+move build file to local
+remove api.docs.war
+stop tomcat 7 and 8
+
+core :
+
+/home/TSAApp/apps/jboss-5.1.0.GA/server/tsa_messaging_node1/farm
+mv smb file to backup dir
+copy smb 
+copy bidmgr
+untar  bidmgr
+link to latest file with bidmgr:
+         ln -sfT bidmgr-distribution-2.9.19-dev-t20180321-1359 bidmgr
+
+
+aml-data-tool:
+tp:
+java -jar aml-data-tool-2.9.13.jar repair --schema tp -haml22-mysql1 -uspike -ptar63t
+java -jar aml-data-tool-2.9.13.jar migrate --schema tp -haml22-mysql1 -uspike -ptar63t
+
+mms_common:
+java -jar aml-data-tool-2.9.13.jar repair --schema mms_common -haml22-mysql1 -uspike -ptar63t
+java -jar aml-data-tool-2.9.13.jar migrate --schema mms_common -haml22-mysql1 -uspike -ptar63t
+
+
+
+setup campaign republisher :
+copy republisher file to /usr/local/tsa/
+then extract and link that file to republisher name (ln -sfT <original file> <new linking filename>
+
+Add repulisher dir location in tsaapp .bashrc
+vim .bashrc
+add below line to this file and save
+    export TSA_REPUBLISHER_DIR="/usr/local/tsa/republisher"
+
+
+
+Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+
+
+
+Add this Email template in front server:
+
+/usr/local/tsa/templates/
+
+sudo vi reseller-customer-support-email_en_US.vm
+
+Fobeus relese track:
+========================
+
+Old campaign name:
+merchantUUID_baID_locationID_advertID_campaignType
+Eg: 12f0c467-8b33-427a-9eb5-555b428bbb95_10002_12542_34900_GT
+
+New campaign name:
+baShortName_locationShortName_advertID_campaignType_merchantUUID
+Eg: CasinoHotels_Boynton-Delray_35117_GT_ea412f16-2f7f-49d2-8dbe-b093feedca88
+
+select SUBSTRING_INDEX('CasinoHotels_Boynton-Delray_35117_GT_ea412f16-2f7f-49d2-8dbe-b093feedca88','_',5) from dual;
+
+8102a655-667c-4895-a06e-8654dfcff4c9_10419_22204_267
+
+mysql -uspike -ptar63t -h aml-qa4-mysql1
+
+newly launched campaigns script change after upgrade.
+
+batch-import-jar-with-dependencies.jar:
+
+home/amlops/phobos_core_content/core-content-1.0.3-RC1/taxonomy_scripts/util
+
+migration :
+verfiy in campaignUpdate Tables_in_migration
+
+select * from campaignUpdate;
+SELECT * FROM content_editor_google.gce_feed f WHERE f.searchEngineUserID=308;
+SELECT * FROM content_editor_google.gce_feedAttributeFieldMapping a WHERE a.feedAttributeID IN (SELECT a.id FROM content_editor_google.gce_feedAttribute a  WHERE a.feedID=164);
+SELECT * FROM content_editor_google.gce_feedItem i WHERE i.feedID=164;
+ SELECT * FROM content_editor_google.gce_feedItemAttributeValue a WHERE a.feedItemID IN (SELECT id FROM content_editor_google.gce_feedItem i WHERE i.feedID=164) ORDER BY a.feedItemID ASC;
+  SELECT * FROM content_editor_google.gce_feedAttribute a WHERE a.feedID=164;
+  
+Multilocation mapping:
+
+SELECT * FROM mms_common.businessLocationTargetMap WHERE businessLocationID=57;
+after upload again run above query to check if the record available or not
+SELECT * FROM mms_common.googleLocationTargets WHERE id IN (66231,66232); (businessLocationTargetID)

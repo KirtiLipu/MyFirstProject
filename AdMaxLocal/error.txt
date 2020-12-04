@@ -1,0 +1,470 @@
+Error:
+ 1. j boss log error :
+		->  possibility cancelled state of an order  Action: status change to archived state
+		
+		-> CRITICAL – (11 errors in jboss01_server_log.protocol-2018-02-28-05-11-51) – java.lang.NullPointerException 
+		
+
+		
+		
+	2. Abu failure:
+		java.lang.NullPointerException  : due to campaign mapping missing. (st-tracker.admaxSearchEngineAccountMap)
+				searchEngineAccount and yjp.campaigns Tables.
+	
+		CRITICAL – (6 errors in abu.protocol-2018-05-31-15-29-00) – MISSING: Accounts Processed
+	
+	3. Order status error:
+	
+			check in clients.externalCampaign tables. enabled=1
+			scheduled the order by groovy script'.
+	groovy change-order-state.groovy -ah http://aml12-front1:8080/sapi/rest/ -ll TRACE -o 748e7835-c07d-4e9f-84ea-f964e4880ed0 -s SCHEDULED -ru Kirtiranjan.Sahoo@admaxlocal.com -rp 'Kirti@83' -ra bloomnation
+			
+2018-05-01 05:20:16.244 (1) [pool-3-thread-9]: Exception [Error during update request.]:java.lang.IllegalStateException: BeanFactor
+y not initialized or already closed - call 'refresh' before accessing beans via the ApplicationContext
+        at org.springframework.context.support.AbstractRefreshableApplicationContext.getBeanFactory(AbstractRefreshableApplicationC
+ontext.java:170)
+        at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1087)
+        at com.thesearchagency.searchengines.bing.BingAccountDeployer.initBingCampaignServiceComponent(BingAccountDeployer.java:140
+)
+        at com.thesearchagency.searchengines.bing.BingAccountDeployer.<init>(BingAccountDeployer.java:127)
+        at com.thesearchagency.admaxlistener.deployer.MultiplexAccountDeployer.createDeployers(MultiplexAccountDeployer.java:701)
+        at com.thesearchagency.admaxlistener.deployer.MultiplexAccountDeployer.getDeployers(MultiplexAccountDeployer.java:672)
+        at com.thesearchagency.admaxlistener.deployer.MultiplexAccountDeployer.getExistingCampaigns(MultiplexAccountDeployer.java:8
+25)
+        at com.thesearchagency.admaxlistener.worker.CampaignUpdateWorker.getCampaignChangeInfos(CampaignUpdateWorker.java:137)
+        at com.thesearchagency.admaxlistener.worker.CampaignUpdateWorker.call(CampaignUpdateWorker.java:84)
+        at com.thesearchagency.admaxlistener.worker.AccountWorker.updateCampaigns(AccountWorker.java:529)
+        at com.thesearchagency.admaxlistener.worker.AccountWorker.deploySync(AccountWorker.java:395)
+        at com.thesearchagency.admaxlistener.worker.AccountWorker.call(AccountWorker.java:150)
+        at com.thesearchagency.admaxlistener.worker.RequestWorker.call(RequestWorker.java:297)
+        at com.thesearchagency.admaxlistener.worker.RequestWorker.call(RequestWorker.java:96)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+        at java.lang.Thread.run(Thread.java:748)
+
+			
+			
+4.LicensingPropertyNotFoundException:
+	select id,display,name,active from smb.resellers where active='F';
+	update tsacommon.searchEngineUsers set enabled='false' where id=1;
+
+5. Bing AdApiErrors Found (listener error)
+		cause:CallRateExceeded
+		
+
+	(9 errors in abu.protocol-2018-02-26-16-29-00) – MISSING: Accounts Processed: 	
+		Do deployment analysis
+		for the particular user run the abu once again for that day.
+	
+CRITICAL – (11 errors in jboss01_server_log.protocol-2018-02-28-05-11-51) – java.lang.NullPointerException 
+
+6. java.lang.IllegalStateException: Could not find existing YahooJapan campaign for a3254_152216_400383_111035_GT 
+
+wrong campaigns mapping between yjp.campaigns and searchEngineAccount table,
+need to do:
+ rerun seupdate and redeployed order.
+ groovy change-order-state.groovy -ah http://aml27-front1:8080/sapi/rest/ -ll TRACE -o 8c073141-dee0-4fcd-bd35-b2e5596a13b7 -s SCHEDULED -ru Kirtiranjan.Sahoo@admaxlocal.com -rp 'Kirti@83' -ra ajc
+	
+ADMAX report download failed for search engine user 
+PERFORMANCE report download failed for search engine user 	
+
+
+7. table cache hit rate 0.04%:
+
+"Table_cache hit rate" is not actually a value from MySQL. It's a calculation from two other values. All they are doing in mysqltuner is dividing open_tables by opened_tables (how many are open now, compared with how many have ever been opened).
+
+11199 |            147 |                443 | 6cb585da-5b17-4056-84b5-3a6f6776ad5f_11816_676_33055_GM | true    | ok     			 | Active  
+11213 |            147 |                443 | 6cb585da-5b17-4056-84b5-3a6f6776ad5f_13561_676_33069_GM | true    | ok  				 | Active
+11195 |            147 |                443 | 6cb585da-5b17-4056-84b5-3a6f6776ad5f_10348_676_33051_GM | true    | ok                 | Active
+11212 |            147 |                443 | 6cb585da-5b17-4056-84b5-3a6f6776ad5f_13561_676_33069_GT | true    | ok                 | Active 
+11203 |            147 |                443 | 6cb585da-5b17-4056-84b5-3a6f6776ad5f_12635_676_33059_GM | true    | ok                 | Active
+11214 |            147 |                443 | 6cb585da-5b17-4056-84b5-3a6f6776ad5f_13562_676_33071_GT | true    | ok                 | Active
+11215 |            147 |                443 | 6cb585da-5b17-4056-84b5-3a6f6776ad5f_13562_676_33071_GM | true    | ok                 | Active
+11198 |            147 |                443 | 6cb585da-5b17-4056-84b5-3a6f6776ad5f_11816_676_33055_GT | true    | ok                 | Active
+11211 |            147 |                443 | 6cb585da-5b17-4056-84b5-3a6f6776ad5f_13560_676_33067_GM | true    | ok                 | Active
+11217 |            147 |                443 | 6cb585da-5b17-4056-84b5-3a6f6776ad5f_13563_676_33073_GM | true    | ok                 | Active
+11200 |            147 |                443 | 6cb585da-5b17-4056-84b5-3a6f6776ad5f_11818_676_33057_GT | true    | ok                 | Active
+11197 |            147 |                443 | 6cb585da-5b17-4056-84b5-3a6f6776ad5f_10545_676_33053_GM | true    | ok                 | Active
+11201 |            147 |                443 | 6cb585da-5b17-4056-84b5-3a6f6776ad5f_11818_676_33057_GM | true    | ok                 | Active
+
+
+
+
+bid 
+=======================================================
+User unable to login after activated account:
+
+2020-01-31 14:54:00,750-980892375 [http-nio-8080-exec-3113] INFO  org.apache.cxf.interceptor.LoggingInInterceptor [] - Inbound Message
+----------------------------
+ID: 347453
+Address: http://127.0.0.1:8080/sapi/rest/security/tokens?username=tiffanie.burns%40cmg.com&password=Tiffanieburns13&realm=tul
+Http-Method: GET
+Content-Type:
+Headers: {Accept=[application/json, text/plain], connection=[Keep-Alive], Content-Type=[null], host=[127.0.0.1:8080], user-agent=[Apache-HttpClie
+nt/4.5.3 (Java/1.8.0_161)]}
+2020-01-31 14:54:00,760-980892385 [http-nio-8080-exec-3113] ERROR com.thesearchagency.services.user.UserServiceComponent [hostname=127.0.0.1, req
+uestId=2298f7df-4c1f-4d4d-a2c7-8c5f3141b4fb, timezone=UTC, authToken=null, ipAddress=127.0.0.1, principalId=, locale=en_US] - Multiple results re
+turned for username tiffanie.burns@cmg.com and password Tiffanieburns13 in realm com.thesearchagency/6d97dd08-4a0f-4aca-9dc1-d63e6967e548
+2020-01-31 14:54:00,761-980892386 [http-nio-8080-exec-3113] ERROR com.thesearchagency.sapi.services.security.SecurityService [hostname=127.0.0.1,
+ requestId=2298f7df-4c1f-4d4d-a2c7-8c5f3141b4fb, timezone=UTC, authToken=null, ipAddress=127.0.0.1, principalId=, locale=en_US] - Exception caugh
+t in execution. Data is tiffanie.burns@cmg.com
+com.thesearchagency.services.commons.ServiceException: Error in the database
+        at com.thesearchagency.services.user.UserServiceComponent.authenticate(UserServiceComponent.java:1263)
+        at sun.reflect.GeneratedMethodAccessor135.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+        at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+        at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:282)
+        at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+        at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+        at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+        at com.sun.proxy.$Proxy26.authenticate(Unknown Source)
+        at com.thesearchagency.sapi.services.security.SecurityService$1.call(SecurityService.java:146)
+        at com.thesearchagency.sapi.services.SAPIService.doExecute(SAPIService.java:159)
+        at com.thesearchagency.sapi.services.security.SecurityService.getSecurityToken(SecurityService.java:108)
+        at sun.reflect.GeneratedMethodAccessor130.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.cxf.service.invoker.AbstractInvoker.performInvocation(AbstractInvoker.java:181)
+        at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:97)
+        at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:200)
+        at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:99)
+        at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:59)
+        at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:96)
+        at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:307)
+        at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+        at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:251)
+at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:234)
+        at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:208)
+        at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:160)
+        at org.apache.cxf.transport.servlet.CXFNonSpringServlet.invoke(CXFNonSpringServlet.java:180)
+        at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:293)
+        at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doGet(AbstractHTTPServlet.java:217)
+        at javax.servlet.http.HttpServlet.service(HttpServlet.java:635)
+        at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:268)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+        at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+        at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+        at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+        at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+        at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+        at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+        at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+        at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+        at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+        at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+        at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+        at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+        at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+        at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+        at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1457)
+        at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+        at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+        at java.lang.Thread.run(Thread.java:748)
+2020-01-31 14:54:00,762-980892387 [http-nio-8080-exec-3113] INFO  org.apache.cxf.interceptor.LoggingOutInterceptor [] - Outbound Message
+---------------------------
+ID: 347453
+Response-Code: 304
+Content-Type: text/plain;charset=UTF-8;version=3.1.21
+Headers: {Content-Type=[text/plain;charset=UTF-8;version=3.1.21], Date=[Fri, 31 Jan 2020 14:54:00 GMT], Expires=[-1], Cache-Control=[no-cache], Pragma=[no-cache], X-AML-API-ID=[2298f7df-4c1f-4d4d-a2c7-8c5f3141b4fb]}
+Payload: Error in the database
+
+Action :
+
+Check in the smb.users table for the email with the specific realm id. If there are multiple entry with the same mail, one should active with the correct email address and others should chamge the email address and make sure in the inactive state.
+
+=====================================================================
+
+
+[//var/local/tsa/leads/incoming] MerchantLeadsCSVHandler   ERROR Failure:
+org.springframework.dao.EmptyResultDataAccessException: Incorrect result size: expected 1, actual 0
+        at org.springframework.dao.support.DataAccessUtils.requiredSingleResult(DataAccessUtils.java:71)
+        at org.springframework.jdbc.core.JdbcTemplate.queryForObject(JdbcTemplate.java:732)
+==================================================
+019-01-03 06:31:13.260 (2) [P1T1]: Exception [Handling Account ID #4930]:java.lang.NullPointerException
+        at com.thesearchagency.admax.algorithms.sabb.AdMaxSABBBudgetBalancer.run(AdMaxSABBBudgetBalancer.java:77)
+        at com.thesearchagency.admax.algorithms.sabb.AdMaxSABBAlgorithm.applyAlgorithm(AdMaxSABBAlgorithm.java:294)
+        at com.thesearchagency.admax.AdMaxSummarizer$AccountWorker.call(AdMaxSummarizer.java:635)
+        at com.thesearchagency.admax.AdMaxSummarizer$AccountWorker.call(AdMaxSummarizer.java:500)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+        at java.lang.Thread.run(Thread.java:748)
+
+
+==================================================		
+		
+2018-06-22 20:44:13.845 (2) [pool-3-thread-12]: Exception [Campaign request failed for accountID 722.]:com.thesearchagency.admaxlis
+tener.exception.AdMaxException: Update message (43bdcf41-dee3-4b15-b574-bc8b02816a6a) for account 06cc3963-63e0-483f-ab5f-5c24704b9
+025 contains updates for child campaigns that haven't been created yet. Advert 62147
+        at com.thesearchagency.admaxlistener.worker.RequestWorker.handleCampaign(RequestWorker.java:566)
+        at com.thesearchagency.admaxlistener.worker.RequestWorker.processRequest(RequestWorker.java:684)
+        at com.thesearchagency.admaxlistener.worker.RequestWorker.call(RequestWorker.java:258)
+        at com.thesearchagency.admaxlistener.worker.RequestWorker.call(RequestWorker.java:96)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+        at java.lang.Thread.run(Thread.java:748)
+
+==============================================
+		
+2018-06-24 13:12:51.479 (2) [P1T1]: Exception [Please run setupDistributions.groovy for the Reseller and add the missing property : GOOG_API_EMAIL]:com.thesearchagency.searchengines.google.exception.LicensingPropertyNotFoundException: Please run setupDistributions.groovy for the Reseller and add the missing property : GOOG_API_EMAIL
+        at com.thesearchagency.searchengines.google.GoogleAdWordsAPI.getCredentialOrThrowLicensingError(GoogleAdWordsAPI.java:5377)
+        at com.thesearchagency.searchengines.google.GoogleAdWordsAPI.initializeOAuthVariables(GoogleAdWordsAPI.java:5406)
+        at com.thesearchagency.searchengines.google.GoogleAdWordsAPI.<init>(GoogleAdWordsAPI.java:336)
+        at com.thesearchagency.searchengines.google.GoogleAdWordsAPI.<init>(GoogleAdWordsAPI.java:219)
+        at com.thesearchagency.searchengines.google.GoogleAPISearchEngine.createAPI(GoogleAPISearchEngine.java:316)
+        at com.thesearchagency.searchengines.google.GoogleAPISearchEngine.createAPI(GoogleAPISearchEngine.java:231)
+        at com.thesearchagency.admax.algorithms.sabb.AdMaxSABBAlgorithm.getGoogleAPI(AdMaxSABBAlgorithm.java:998)
+        at com.thesearchagency.admax.algorithms.sabb.AdMaxSABBAlgorithm.updateSearchEngineAccounts(AdMaxSABBAlgorithm.java:566)
+        at com.thesearchagency.admax.algorithms.sabb.AdMaxSABBAlgorithm.applyAlgorithm(AdMaxSABBAlgorithm.java:309)
+        at com.thesearchagency.admax.AdMaxSummarizer$AccountWorker.call(AdMaxSummarizer.java:635)
+        at com.thesearchagency.admax.AdMaxSummarizer$AccountWorker.call(AdMaxSummarizer.java:500)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+
+===========================================================================
+YahooJapanABU:
+		
+2018-08-31 05:44:45.670 (3) [P1T1]: DefaultPropertyFileMonitor: modification detected on 1415157693000 for com.thesearchagency.AlertUtils.properties
+
+2019-02-21 23:39:49.046 (2) [P1T5]: Error in getting campaign mappings for account 5136, Reason:Could not retrieve campaign mappings for AdmaxCampaignID:24061
+2019-02-21 23:39:49.061 (3) [P1T5]: Distribution Properties Cache: Loading new properties for 3269f20f-8907-4a9d-a617-cc9291e3ddac_ALGORITHM
+2019-02-21 23:39:49.167 (2) [P1T5]: Exception [Handling Account ID #5136]:java.lang.NullPointerException
+        at com.thesearchagency.admax.algorithms.sabb.AdMaxSABBBudgetBalancer.run(AdMaxSABBBudgetBalancer.java:77)
+        at com.thesearchagency.admax.algorithms.sabb.AdMaxSABBAlgorithm.applyAlgorithm(AdMaxSABBAlgorithm.java:294)
+        at com.thesearchagency.admax.AdMaxSummarizer$AccountWorker.call(AdMaxSummarizer.java:635)
+        at com.thesearchagency.admax.AdMaxSummarizer$AccountWorker.call(AdMaxSummarizer.java:500)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+        at java.lang.Thread.run(Thread.java:748)
+
+select searchEngineAccountID,changeTime from logging.searchEngineAccountChanges where `column` = 'searchEngineStatus' AND searchEngineAccountID in (select searchEngineAccountID from admaxSearchEngineAccountMap where admaxCampaignID in (select id from admaxCampaigns where accountID=3955)) and newValue = 'deleted';
+
+update logging.searchEngineAccountChanges set changeTime='2019-03-12 17:17:41' where `column` = 'searchEngineStatus' AND searchEngineAccountID in (select searchEngineAccountID from admaxSearchEngineAccountMap where admaxCampaignID in (select id from admaxCampaigns where accountID=3955)) and newValue='deleted' and changeTime='2019-03-11 17:17:41';
+
+/usr/local/tsa/bidmgr/admax.sh -d3 -a 3955 --distribution 178 -z Asia/Tokyo --date 2019-03-11
+
+=======================================================================================================
+
+2018-09-01 06:02:23.803 (2) [pool-3-thread-13]: Error: CampID: 69187_GT Info: Error during add campaigns request.
+2018-09-01 06:02:23.803 (2) [pool-3-thread-13]: Error: CampID: 69187_GM Info: Error during add campaigns request.
+2018-09-01 06:02:23.804 (1) [pool-3-thread-13]: Exception [Error during add campaigns request. ]:java.util.concurrent.ExecutionExce
+ption: java.lang.IllegalStateException: Failed to get distribution properties for f0fd815e-3e81-4500-8ede-0a28c3290453 (ALGORITHM).
+        at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+        at java.util.concurrent.FutureTask.get(FutureTask.java:192)
+        at com.thesearchagency.admaxlistener.deployer.MultiplexAccountDeployer.createCampaigns(MultiplexAccountDeployer.java:864)
+        at com.thesearchagency.admaxlistener.worker.CampaignCreateWorker.call(CampaignCreateWorker.java:58)
+        at com.thesearchagency.admaxlistener.worker.CampaignCreateWorker.call(CampaignCreateWorker.java:32)
+        at com.thesearchagency.admaxlistener.worker.AccountWorker.createCampaigns(AccountWorker.java:476)
+        at com.thesearchagency.admaxlistener.worker.AccountWorker.deploySync(AccountWorker.java:405)
+        at com.thesearchagency.admaxlistener.worker.AccountWorker.call(AccountWorker.java:150)
+        at com.thesearchagency.admaxlistener.worker.RequestWorker.call(RequestWorker.java:297)
+        at com.thesearchagency.admaxlistener.worker.RequestWorker.call(RequestWorker.java:96)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+        at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.IllegalStateException: Failed to get distribution properties for f0fd815e-3e81-4500-8ede-0a28c3290453 (ALGORITHM).
+        at com.thesearchagency.OverridableSystemProperties.getProperty(OverridableSystemProperties.java:112)
+        at com.thesearchagency.admax.algorithms.common.AdMaxProperties.getValue(AdMaxProperties.java:119)
+        at com.thesearchagency.admax.algorithms.common.AdMaxProperties.getFloat(AdMaxProperties.java:51)
+        at com.thesearchagency.searchengines.bing.BingAccountDeployer.getInitialBid(BingAccountDeployer.java:929)
+        at com.thesearchagency.searchengines.bing.BingAccountDeployer.createCampaigns(BingAccountDeployer.java:259)
+        at com.thesearchagency.admaxlistener.worker.SearchEngineCampaignWorker.call(SearchEngineCampaignWorker.java:62)
+        at com.thesearchagency.admaxlistener.worker.SearchEngineCampaignWorker.call(SearchEngineCampaignWorker.java:23)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+        ... 4 more
+
+update the google budgetSearchEngineIdentifier to match with google campaigns in Adword.
+GoogleAds->Tools->Shared budgets->search for a particular Campaign which has zero entry in searchEngineAccount table.
+
+=================================
+Must be in Error order cases:
+
+Exception [Error during add campaigns request. ]:java.util.concurrent.ExecutionException: com.thes
+earchagency.searchengines.google.contenteditor.GCEException: Caught exception in GCE
+
+Caused by: com.thesearchagency.searchengines.google.contenteditor.GCEException: Caught exception in GCE
+Caused by: java.util.concurrent.ExecutionException: java.lang.NullPointerException: Campaign ID must be the same for all AdGroups passed to getAd
+Groups
+Caused by: java.lang.NullPointerException: Campaign ID must be the same for all AdGroups passed to getAdGroups
+
+check all tables and mapping are properly or not.
+
+===========================
+WARN  o.a.c.h.SimpleHttpConnectionManager - SimpleHttpConnectionManager being used incorrectly.  Be sure that HttpMethod.releaseConnection() is always called and that only one thread and/or method is using this connection manager at a time.
+2018-10-04 05:01:05.875 (2) [pool-3-thread-13]: No CONTENT_EDITOR properties found for merchant : d8c468b3-0702-44ad-bb1d-8fee7efc0
+d77, 1retry left
+2018-10-04 05:01:05.875 (3) [pool-3-thread-13]: Waiting for 15 seconds before retying...
+2018-10-04 05:01:05.875 (2) [pool-3-thread-11]: Exception [Unhandled exception]:java.lang.IllegalStateException: Failed to get dist
+ribution properties for 606946c5-1cac-42e7-ba75-29aa55643bb3 (CONTENT_EDITOR).
+        at com.thesearchagency.OverridableSystemProperties.getProperty(OverridableSystemProperties.java:112)
+        at com.thesearchagency.admaxlistener.deployer.MultiplexAccountDeployer.convertCampaignStruct(MultiplexAccountDeployer.java:
+164)
+        at com.thesearchagency.admaxlistener.worker.AccountWorker.parseChanges(AccountWorker.java:290)
+        at com.thesearchagency.admaxlistener.worker.AccountWorker.deploySync(AccountWorker.java:373)
+        at com.thesearchagency.admaxlistener.worker.AccountWorker.call(AccountWorker.java:150)
+        at com.thesearchagency.admaxlistener.worker.RequestWorker.call(RequestWorker.java:297)
+        at com.thesearchagency.admaxlistener.worker.RequestWorker.call(RequestWorker.java:96)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+        at java.lang.Thread.run(Thread.java:748)
+Caused by: com.google.common.cache.CacheLoader$InvalidCacheLoadException: CacheLoader returned null for key 606946c5-1cac-42e7-ba75
+-29aa55643bb3_CONTENT_EDITOR.
+        at com.google.common.cache.LocalCache$Segment.getAndRecordStats(LocalCache.java:2375)
+        at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2337)
+        at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2295)
+        at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2208)
+        at com.google.common.cache.LocalCache.get(LocalCache.java:4053)
+        at com.google.common.cache.LocalCache$LocalManualCache.get(LocalCache.java:4899)
+        at com.thesearchagency.OverridableSystemProperties.getProperty(OverridableSystemProperties.java:52)
+        ... 10 more
+======================================================
+
+2019-01-16 05:04:02.874 (2) [pool-3-thread-33]: Exception [Campaign request failed for accountID 4256.]:com.thesearchagency.admaxli
+stener.exception.AdMaxException: Cannot undelete campaigns
+        at com.thesearchagency.admaxlistener.worker.RequestWorker.handleCampaign(RequestWorker.java:578)
+        at com.thesearchagency.admaxlistener.worker.RequestWorker.processRequest(RequestWorker.java:681)
+        at com.thesearchagency.admaxlistener.worker.RequestWorker.call(RequestWorker.java:258)
+        at com.thesearchagency.admaxlistener.worker.RequestWorker.call(RequestWorker.java:96)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+        at java.lang.Thread.run(Thread.java:748)
+
+
+==========================================
+
+
+2019-09-23 20:18:26.871 (2) [pool-3-thread-5]: Error: CampID: 75498_GM Info: [[Google API error, type=Campaign, errorCode=0, errorText=SizeLimitError, reason=SizeLimitError.REQUEST_SIZE_LIMIT_EXCEEDED, field=]
+[AdMaxDeploymentMessageConverter] Campaings for the Result: 35
+
+select * from mms_common.accounts where bpid like '848af11a-14c6-4ed7-bacd-317c548007d5%';
+select count(*) from mms_common.campaigns where accountID=8532; -- count 26
+select count(*) from pointRadius where locationID=16844; -- count 233
+No of request : 26*233=6058
+		
+========================================================
+
+If bid doesn't apply or reflect on admaxbids table:
+===================================================
+
+select ab.accountID,ab.elementType,ab.elementID,ab.currentBid,ab.currentBidSetDate,ab.newBid,ab.newBidSetDate,ab.retryCount,sea.distributionID,sea.searchEngineIdentifier,seg.id,seg.searchEngineIdentifier,seadb.budget,seadb.actualSEBudget from `tsacommon`.searchEngineAccounts sea join `st-tracker`.admaxSearchEngineAccountActualDailyBudgets seadb on seadb.searchEngineAccountID = sea.id and seadb.date = (select max(seadb2.date) from `st-tracker`.admaxSearchEngineAccountActualDailyBudgets seadb2 where seadb2.searchEngineAccountID = sea.id) join `st-tracker`.searchEngineGroups seg on seg.searchEngineAccountID = sea.id join `st-tracker`.admaxBids ab on ab.accountID = sea.accountID and ab.elementType = 'searchEngineAccount' and ab.elementID = sea.id where ab.newBid IS NOT NULL and sea.distributionID=3 and seg.searchEngineStatus = 'ok' and sea.searchEngineUserID in (83) group by seg.id order by ab.accountID,ab.newBidSetDate asc
+
+
+select count(*) from tsacommon.searchEngineAccounts sea join `st-tracker`.searchEngineGroups seg on seg.searchEngineAccountID = sea.id where sea.searchEngineUserID in (83) and distributionID=3 order by seadb2.date desc limit 50
+
+/usr/local/tsa/bidmgr/seupdate.sh -d3 -a 65 -S 3 --accounts --groups --listings --inactive --deleted
+
+select id,description,enabled from tsacommon.searchEngineAccounts where accountID=65 and distributionID=3 and searchEngineStatus='ok';
+
+update tsacommon.searchEngineAccounts set enabled='true' where accountID=65 and distributionID=3 and searchEngineStatus='ok';
+
+Location Extension issues:
+===========================
+2018-11-23 10:30:42.447 (2) [P33T1]:  - com.google.api.ads.adwords.axis.v201809.cm.CampaignFeedError: CampaignFeedError.NO_EXISTING_LOCATION_CUSTOMER_FEED: Error Type=CampaignFeedError field=operations[0].operand.feedId, trigger=FeedId{id=84864718}
+2018-11-23 10:30:42.447 (2) [P33T1]: com.google.api.ads.adwords.axis.v201809.cm.CampaignFeedError: ApiError: fieldpath=operations[0].operand.feedId, trigger=FeedId{id=84864718} apierrortype=CampaignFeedError, reason=CampaignFeedError.NO_EXISTING_LOCATION_CUSTOMER_FEED
+
+=================================
+ADs or Kws not create in AdWords:
+=================================
+
+Chech in below tables and find out the reason: If there is no recorde check everything is correct or not , if yes then just deploy the order again:
+
+select * from content_editor_google.gce_textAdError where textAdID in (select id from gce_textAd where adGroupID in (select id from gce_adGroup where campaignID in ( select id from gce_campaign where searchEngineUserID=1276)));
+
+select * from content_editor_google.gce_keywordError where keywordID in (select id from gce_keyword where adGroupID in (select id from gce_adGroup where campaignID in ( select id from gce_campaign where searchEngineUserID=1276)));
+
+
+------------------------------------------------------------------------------------------------------------
+#  warning from send_alarm.sh : Google-Staging (aml22-core1): ALARM - Bid Processing Errors (AdMaxBidUpdater)
+#------------------------------------------------------------------------------------------------------------
+
+YJP-Staging (aml27-core1): WARNING - Bid Updater Retries Required (AdMaxBidUpdater)
+
++-----------+-----------------------+--------+---------------+------------+
+| accountID | searchEngineAccountID | newBid | newBidSetDate | retryCount |
++-----------+-----------------------+--------+---------------+------------+
+|        16 |                    47 |     80 | 2016-07-07    |          1 |
+|        16 |                    48 |     80 | 2016-07-07    |          1 |
+|        17 |                    49 | 74.194 | 2016-07-07    |          1 |
+|        17 |                    50 | 74.194 | 2016-07-07    |          1 |
+|        17 |                    51 | 74.194 | 2016-07-07    |          1 |
+|        17 |                    52 | 74.194 | 2016-07-07    |          1 |
++-----------+-----------------------+--------+---------------+------------+
+
+Solutions:
+----------
+check if accountID is for deleted campaigns. 
+set retryCount=0,newBid=NULL and newBidSetDate=NULL in admaxBids and observe in next day.
+
+* check in `st-tracker`.admaxBidErrors  table . delete the entry from that.
+* update the send_alarm.sh script
+
+#
+This was because we were trying to send new bids for a deleted campaign. 
+
+Update following:
+
+- Identify deleted element:
+	select id,distributionID,description ,searchEngineStatusText from tsacommon.searchEngineAccounts where accountID=434;
+	select * from `st-tracker`.admaxBids where elementID in (<deleted element>);
+- Update
+	update `st-tracker`.admaxBids set newBid=NULL,newBidSetDate=NULL,retryCount=0 where elementID in (<deleted element>);
+- Delete : check in `st-tracker`.admaxBidErrors  table . delete the entry from that.
+	select * from `st-tracker`.admaxBidErrors;
+	Delete from `st-tracker`.admaxBidErrors;
+	
+<Message>Cannot update adgroup which is in expired state.</Message>
+<Type>BatchError</Type>
+</BatchError><BatchError>
+<Code>1215</Code>
+<Details i:nil="true"/><ErrorCode>CampaignServiceCannotUpdateAdGroupInExpiredState</ErrorCode><FieldPath i:nil="true"/><ForwardCompatibilityMap i:nil="true" xmlns:a="http://schemas.datacontract.org/2004/07/System.Collections.Generic"/><Index>1</Index>
+<Message>Cannot update adgroup which is in expired state.</Message>
+<Type>BatchError</Type>
+</BatchError></PartialErrors>
+</UpdateAdGroupsResponse></s:Body></s:Envelope>
+
+
+Feed extension issues :
+
+SELECT * FROM tsacommon.searchEngineUsers a WHERE a.description LIKE '2577cac4-68fb-4769-afcc-e04cb2488d1e%';
+
+  SELECT * FROM gce_feed a WHERE a.searchEngineUserID = '153';
+
+  SELECT * FROM gce_feedAttribute a WHERE a.feedID = 442;
+
+  SELECT * FROM gce_feedAttributeFieldMapping a WHERE a.feedAttributeID  IN (1263,1264);
+
+  SELECT * FROM gce_feedItem a WHERE a.feedID = 442;
+
+  SELECT * FROM gce_feedItemAttributeValue a WHERE a.feedItemID IN (4757,4758,4762,4763);
+
+  SELECT * FROM gce_feedMapping a WHERE a.feedID = 442;
+  
+ delete gce_feedItem where feedID=957;
+delete  from gce_feedItemAttributeValue where feedItemID in (SELECT id FROM gce_feedItem WHERE feedID = 957);
+ 
+select * from gce_campaignFeedError where campaignFeedID in (select id from gce_campaignFeed where campaignID in (select id from gce_campaign where searchEngineUserID=153));
+
+select * from gce_campaignFeed where campaignID in (select id from gce_campaign where searchEngineUserID=153) and feedID=957
+
+delete from gce_campaignFeedError where campaignFeedID in (select id from gce_campaignFeed where campaignID in (select id from gce_campaign where searchEngineUserID=153) and feedID=957);
+
+select id from gce_campaignFeed where campaignID = 4023;
+
+select id from gce_campaign where searchEngineUserID=153; 
+  
+  2577cac4-68fb-4769-afcc-e04cb2488d1e_10112_16714_38787_GT

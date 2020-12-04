@@ -1,0 +1,56 @@
+facebook performance report:
+============================
+select fbcr.startTime as Date,
+a.description as MerchantUUID,
+sum(fbcr.imps) as Impressions,
+sum(fbcr.clicks) as Clicks,
+sum(fbcr.cost) as Cost,
+sum(fbcr.reach) as Reach,
+sum(fbcr.postEngagements) as PostEngagements,
+sum(fbcr.pageLikes) as PageLikes,
+sum(fbcr.leads) as Leads,
+sum(fbcr.videoViews) as VideoViews 
+from staging.facebookCampaignPerformanceReports fbcr join tp.campaigns c on fbcr.campaignid=c.tpId 
+join tsacommon.searchEngineUsers seu on c.searchEngineUserId=seu.id 
+join tsacommon.accounts a on seu.accountID=a.id 
+join smb.merchants m on a.description=m.id 
+join smb.resellers r on m.reseller_id=r.id and r.name='haineslocal' group by a.id,fbcr.startTime;
+
+
+select fbcr.startTime as Date,a.description as MerchantUUID,sum(fbcr.imps) as Impressions,sum(fbcr.clicks) as Clicks,sum(fbcr.cost) as Cost,sum(fbcr.reach) as Reach,sum(fbcr.postEngagements) as PostEngagements,sum(fbcr.pageLikes) as PageLikes,sum(fbcr.leads) as Leads,sum(fbcr.videoViews) as VideoViews from staging.facebookCampaignPerformanceReports fbcr join tp.campaigns c on fbcr.campaignid=c.tpId join tsacommon.searchEngineUsers seu on c.searchEngineUserId=seu.id join tsacommon.accounts a on seu.accountID=a.id and fbcr.startTime between '2020-01-01' and '2020-01-31' group by a.id,fbcr.startTime;
+
+select fbcr.startTime as Date,a.description as MerchantUUID,sum(fbcr.imps) as Impressions,sum(fbcr.clicks) as Clicks,sum(fbcr.cost) as Cost,sum(fbcr.reach) as Reach,sum(fbcr.postEngagements) as PostEngagements,sum(fbcr.pageLikes) as PageLikes,sum(fbcr.leads) as Leads,sum(fbcr.videoViews) as VideoViews from staging.facebookCampaignPerformanceReports fbcr join tp.campaigns c on fbcr.campaignid=c.tpId join tsacommon.searchEngineUsers seu on c.searchEngineUserId=seu.id join tsacommon.accounts a on seu.accountID=a.id join smb.merchants m on a.description=m.id join smb.resellers r on m.reseller_id=r.id and fbcr.startTime between '2018-10-01' and '2018-10-31' and r.name='haineslocal' group by a.id,fbcr.startTime;
+
+mysql> desc facebookCampaignPerformanceReports;
++-----------------+--------------+------+-----+------------+-------+
+| Field           | Type         | Null | Key | Default    | Extra |
++-----------------+--------------+------+-----+------------+-------+
+| startTime       | date         | NO   | PRI | 0000-00-00 |       |
+| campaignid      | varchar(100) | NO   | PRI | NULL       |       |
+| cost            | double       | NO   |     | 0          |       |
+| imps            | int(11)      | NO   |     | 0          |       |
+| clicks          | int(11)      | NO   |     | 0          |       |
+| leads           | int(11)      | NO   |     | 0          |       |
+| pageLikes       | int(11)      | NO   |     | 0          |       |
+| postEngagements | int(11)      | NO   |     | 0          |       |
+| videoViews      | int(11)      | NO   |     | 0          |       |
+| reach           | int(11)      | NO   |     | 0          |       |
++-----------------+--------------+------+-----+------------+-------+
+mysql> desc tp.campaigns;
++--------------------+--------------+------+-----+---------+----------------+
+| Field              | Type         | Null | Key | Default | Extra          |
++--------------------+--------------+------+-----+---------+----------------+
+| id                 | int(11)      | NO   | PRI | NULL    | auto_increment |
+| searchEngineUserId | int(11)      | NO   |     | NULL    |                |
+| tpId               | varchar(100) | YES  | MUL | NULL    |                |
+| name               | varchar(255) | YES  |     | NULL    |                |
+| status             | varchar(255) | YES  |     | NULL    |                |
+| startDate          | date         | YES  |     | NULL    |                |
+| endDate            | date         | YES  |     | NULL    |                |
+| lastUpdated        | timestamp    | YES  |     | NULL    |                |
+| json               | longtext     | YES  |     | NULL    |                |
++--------------------+--------------+------+-----+---------+----------------+
+
+This is because of account termination and deplyed with only google campaigns. but for another facebook acccount the data has been missing from 13 aug, because of failure of campaign republisher tool for that account, meanwhile order deoployed in AML but in tigerpistol it was ended on that date. So We manually deployed the order again and it is now in active, facebook 	performance data for this account will be coming from 8th oct onwards. 
+
+select fbcr.startTime as Date,a.description as MerchantUUID,sum(fbcr.imps) as Impressions,sum(fbcr.clicks) as Clicks,sum(fbcr.cost) as Cost,sum(fbcr.reach) as Reach,sum(fbcr.postEngagements) as PostEngagements,sum(fbcr.pageLikes) as PageLikes,sum(fbcr.leads) as Leads,sum(fbcr.videoViews) as VideoViews from staging.facebookCampaignPerformanceReports fbcr join tp.campaigns c on fbcr.campaignid=c.tpId join tsacommon.searchEngineUsers seu on c.searchEngineUserId=seu.id join tsacommon.accounts a on seu.accountID=a.id join smb.merchants m on a.description=m.id join smb.resellers r on m.reseller_id=r.id and r.name='bos' group by a.id,fbcr.startTime;

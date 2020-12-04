@@ -1,0 +1,199 @@
+Content pre-validation:
+=======================
+
+Get the copy of content file in your local repository 
+Ensure to all file have unix line ending if not run the dos2unix command to convert the file into unix format.
+(NOTE: taxonomy type: Please enter JP for japan and US for us and CAEN for canada english and CAFR for canada french and UK or uk regionCode and YJP for yahoo japan)
+
+Pre-Validation of Business Areas:
+---------------------------------
+	command: sh AMLRunBAPreValidationScripts.sh <path to business areas.csv> <taxonomy type>
+	
+Pre-Validation of GMB Categories:
+--------------------------------------
+	command: sh AMLRunGMBCategoryPreValidationScripts.sh <path to gmbCategoryfile.csv> <taxonomy type>
+	
+Pre-Validation of Business Categories:
+--------------------------------------
+	command: sh AMLRunBCPreValidationScripts.sh <business category file> <business area file> <taxonomy type>
+====================================================================================================================================	
+Pre validation of Location :
+-----------------------------
+	command: ./AMLRunLocationPreValidationScripts.sh <Locations File> <regionCode>
+	
+Pre validation of Location Target:
+----------------------------------
+	command: ./AMLValidateLocationsAndTargets.py <Locations File> <targets file> <regionCode> <distributionID>
+	Google, Bing and facebook = 3, 147 and 178
+
+Pre validation of Location Alias:
+---------------------------------
+	command: ./AMLRunAliasPreValidationScripts.sh <locations file> <Alias File> <regionCode>
+	
+Pre validation of Location Point Radius:
+----------------------------------------
+	command: ./AMLRunPointRaidusValidationScripts.sh <Locations File> <Point radius file> <regionCode>
+====================================================================================================================================
+Pre-validation of text ads file:
+----------------------------------
+	1. remove blank line in ads
+	----------------------------
+	Command: sh generic/AMLGetBlankLinesInAds.sh <path to ad file directory>
+	
+	if there entry for affected file then remove the blank line.following this command.
+	Command: sh generic/AMLRemoveBlankLinesInAds.sh <path to ad file directory>
+	
+	2. Check validation error
+	--------------------------
+	1. Command: sh AMLRunADPreValidationScripts.sh <path to ad file directory> <taxonomy type>
+	
+Pre-validation for keyword file:
+--------------------------------
+	1. Validating Keyword File for Issues: 
+	--------------------------------------
+	Command: sh AMLRunKWPreValidationScripts.sh <path to keyword directory> <taxonomy type>
+	
+	2. Validation of Negative Keywords:
+	------------------------------------
+		Command: sh generic/AMLValidateNegativeKW.py <path to keywords< <taxonomy type>
+		 (for US taxonomy or Canadian taxonomy, taxonomy type is US)
+	
+	
+Content Upload:
+=================
+	
+	US content upload in 4 stack only - AML1 , AML12, AML22, AML26
+	if Business location have to upload then use AML17 stack (VCA)
+	
+	your user account has been created in aws test stack
+
+54.90.237.100 - core1
+54.92.200.123 - mysql1
+34.204.142.192 - Front1
+
+| id | languageCode | countryCode | variant | description  |
++----+--------------+-------------+---------+--------------+
+|  1 | en           | GB          |         | English (UK) |
+|  2 | en           | US          |         | English (US) |
+|  3 | ja           | JP          |         | Japan (JP)   |
+|  4 | en           | CA          |         | English (CA) |
+|  5 | fr           | CA          |         | French (CA)  |
++----+--------------+-------------+---------+--------------+
+
+ TaxonomyService:106 - ************* CACHING COMPLETED FOR REALM : yjprod. READY FOR REQUESTS **********
+2018-07-04 08:11:32 INFO  ServerImpl:85 - Setting the server's publish address to be /
+2018-07-04 08:11:32 INFO  ContextLoader:345 - Root WebApplicationContext: initialization completed in 26109 ms
+04-Jul-2018 08:11:33.012 INFO [localhost-startStop-2] org.apache.catalina.startup.HostConfig.deployWAR Deployment of web application archive [/usr/share/tomcat8/webapps/taxonomyapi.war] has finished in [38,535] ms
+
+=======================
+C:\Users\kirtiranjan.sahoo\bitbucket\core-content
+=========================	
+ba
+gmb
+ads
+kws
+
+Ads upload:
+------------
+home/amlops/core-content/taxonomy_scripts/util/ 
+java -jar aml-ad-load-cli-x.x.x-jar-with-dependencies.jar -d <Path_of_ads _file> -h mysqlhost:3306 -l <language_code> -uspike
+NOTE: Ensure to check the language code correctly
+
+java -jar aml-ad-load-cli-1.0.4-jar-with-dependencies.jar -d /tmp/USCoreTaxo20201125/Ads -h aml1-mysql1:3306 -l 2 -uspike
+
+java -jar aml-ad-load-cli-1.0.4-jar-with-dependencies.jar -d /tmp/VCAAds/Ads -h aml17-mysql1:3306 -l 2 -uspike
+
+java -jar aml-ad-load-cli-1.0.4-jar-with-dependencies.jar -d /tmp/YJTaxonomy20200903/YJads -h aml27-mysql1:3306 -l 3 -uspike
+
+
+aml-ad-load-cli-1.0.4-jar-with-dependencies.jar
+
+select seu.searchEngineIdentifier,ta.searchEngineIdentifier from gce_textAd ta join gce_adGroup ag on ta.adGroupID=ag.id join gce_campaign c on ag.campaignID=c.id join tsacommon.searchEngineUsers seu on c.searchEngineUserID=seu.id join tsacommon.accounts a on seu.accountID=a.id join smb.merchants m on a.description=m.id join smb.resellers r on m.reseller_id=r.id where r.name='orr' and seu.id=547 and c.status in ('Active','Paused') and ta.status='Enabled';
+
+Keyword upload:
+--------------
+Once validation done move the Kws taxonomy to core server :/usr/local/tsa/mms_keywords
+
+ssh -t -L 9993:localhost:9993 kirti.sahoo@192.168.70.62 ssh -t -L 9993:localhost:8080 kirti.sahoo@aml17-core1
+ssh -t -L 9993:localhost:9993 kirti.sahoo@192.168.70.62 ssh -t -L 9993:localhost:8080 kirti.sahoo@aml24-core1
+
+ssh -t -L 9997:localhost:9997 -p 8421 kirti.sahoo@3.211.135.153 ssh -t -L 9997:localhost:8080 kirti.sahoo@aml22-core1
+
+ssh -t -L 9997:localhost:9997 -p 8421 kirti.sahoo@3.211.135.153 ssh -t -L 9997:localhost:8080 kirti.sahoo@aml17-core1
+
+ssh -t -L 9997:localhost:9997 -p 8421 kirti.sahoo@3.211.135.153 ssh -t -L 9997:localhost:8080 kirti.sahoo@aml24-core1
+
+
+ssh -t -L 9993:localhost:9993 kirti.sahoo@162.209.78.146 ssh -t -L 9993:localhost:8080 kirti.sahoo@107.22.148.76
+
+54.208.0.184:8080/jmx-console
+
+http://localhost:9993/jmx-console/
+
+keyword upload in aml1-core1
+
+name=KeywordListMonitorJMX,service=EJB3,type=ManagementInterface
+
+/home/amlops/core-content/contentValidationScripts/usa/AMLContentValidator.sh
+
+93e91c60-10db-49aa-8a46-4df307fcbe3e, 7a5a00f2-417f-47ec-91f8-e8dd6fd01a9e, 0de79a74-10fb-4bca-8cbb-201f9a70f8bf, b3b27362-0611-418d-a4b1-a4e1b7f202e9, 074ea9d0-ba1a-4bb4-84a6-dff95eb9b90d
+
+Perfumes e aguas de colonia perfumes extratos
+fixoz sem fonte propria de energia
+
+FB Image upload:
+------------------
+
+First copy the image folder in following folder in monman2 server:-
+usr/local/tsa/core-content
+       /usa (Locale)
+              /media_taxonomy
+                     /10002 (Business Area ID)
+                             /images
+                                     image-baid-1.jpeg
+change the old image report csv file in /usr/local/tsa/image_report folder.
+Then run the below commands. /usr/local/tsa/ops-utils
+
+./media-uploader.sh -ak XXXXXXXXXXXX -sk YYYYYYYYYYYY/JuXq -bk aml-qa -rg us-west-1 -l usa -mt image -sd /usr/local/tsa/ops-utils/core-content -dd /usr/local/downloads
+
+sudo ./media-uploader.sh -ak AKIAJAQPSY4UPJR4MCAA -sk jnAlL0RQYQeIilSyQjPf0igq+/qk/m7uj1kuGMFW -bk aml-prod -rg us-west-1 -l usa -mt image -sd /usr/local/tsa/core-content/usa/ -dd /usr/local/tsa/image_report
+
+aml-prem:
+sudo ./media-uploader.sh -ak AKIAJAQPSY4UPJR4MCAA -sk jnAlL0RQYQeIilSyQjPf0igq+/qk/m7uj1kuGMFW -bk aml-prem -rg us-west-1 -l usa -mt image -sd /usr/local/tsa/core-content -dd /usr/local/tsa/image_report
+
+
+sudo ./media-uploader.sh -ak AKIAJAQPSY4UPJR4MCAA -sk jnAlL0RQYQeIilSyQjPf0igq+/qk/m7uj1kuGMFW -bk aml-repo -rg us-west-1 -l usa -mt image -sd /usr/local/tsa/core-content -dd /tmp
+
+Download:
+
+./media-uploader.sh -ak XXXXXXXXXXXX -sk YYYYYYYYYYYY -bk bucket-name -rg us-west-1 -l usa -mt image -r true -dd /usr/local/downloads
+
+sudo ./media-uploader.sh -ak AKIAJAQPSY4UPJR4MCAA -sk jnAlL0RQYQeIilSyQjPf0igq+/qk/m7uj1kuGMFW -bk aml-prem -rg us-west-1 -l usa -mt image -r true -dd /usr/local/tsa/image_report
+
+
+check image report in /usr/local/tsa/image_report folder, file uploaded or not.
+
+/home/amlops/core-content/taxonomy_scripts/business_taxonomy
+
+./load_business_area_media.sh spike tar63t aml1-mysql1 /usr/local/tsa/image_report/images_usa.csv
+
+
+
+Post content Validation:
+========================
+/home/amlops/contentValidationScripts/usa ( different folder for different region) 
+
+nohup ./AMLContentValidator.sh aml17-mysql1 &> /tmp/content_validate_2019-09-18_aml17.log &
+
+
+
+In YJ:
+
+Steps:
+1. Upload new content on YJ stack
+2. Go to Front1 server tomcat8 webapps directory 
+3. Move the taxonomyapi.war from webapps to /tmp/ directory. This should undeploy the taxonomyapi.war file from tomcat. Wait for the taxonomy api folder to disappear from webapps folder.
+4. Once done, move back the taxonomyapi.war file from /tmp/ directory to webapps folder. 
+5. If you are tailing the Catalina.out log, you will notice that tomcat will deploy the taxonomy api again.
+
+That’s it. Basically post content upload, we are redeploying the taxonomy API as doing that will refresh the cache on our end and not cause any caching related issues on YJ side. 

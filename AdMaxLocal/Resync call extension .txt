@@ -1,0 +1,164 @@
+Resync call extension:
+------------------------
+	Have already been created through AML.
+	  1. first to unchecked from aml reseller ui and again redeployed.
+	  2. Back-end solution: 
+			i.   Soap Feed mapping service request to get feedmapingID and feedId : insert clientCustomerId: <value>  with access token from OAuth service: <value>
+			ii.  Mutate request to remove feedmapingID and feedId.: 
+					insert clientCustomerId: <value>  with access token from OAuth service: <value>, feedMappingId, feedId
+			iii. soap request to get call extension:
+					insert clientCustomerId: <value>  with access token from OAuth service: <value>, feedId
+			iv.  soap request to delete call extension :
+					insert clientCustomerId: <value>  with access token from OAuth service: <value>, feedId
+			v.  Deleting Account level feed from AML database:
+QUERY:
+------
+select * from gce_feed f join gce_feedMapping fm on f.id=fm.feedID join gce_feedAttribute fa on fa.feedID=f.id join gce_feedAttributeFieldMapping fam on fam.feedMappingID=fm.id where f.name='CallExtension' and f.searchEngineUserID=841;
+ 
+delete f.*,fm.*,fa.*,fam.* from gce_feed f join gce_feedMapping fm on f.id=fm.feedID join gce_feedAttribute fa on fa.feedID=f.id join gce_feedAttributeFieldMapping fam on fam.feedMappingID=fm.id where f.name='CallExtension' and f.searchEngineUserID=850;
+		
+		3. add Call extension manually at Campaign Level. and save it.
+
+800-350-8823
+		
+Location Extension:
+-------------------
+1. Log into AML, goto the concerned account and Delete the location extension (if created) through AML.
+2. Go to the AdWords account and manually delete the Account level location extension.
+3. Click +Extension button and select “add location feed manually”. 
+4. Repeat step 3 for all the locations listed below.
+5. Tech Ops : Delete the gce_feed entry for this account from content_editor_google.gce_feed table.
+
+QUERY:
+------
+select * from gce_feed where name='GMBLocationExtension' and searchEngineUserID=355;
+
+delete from gce_feed where name='GMBLocationExtension' and searchEngineUserID=262;		
+
+
+6e386529-a54c-4cce-98c2-29dce074be80_1_tul_BA Lawn & Landscape-Honda
+91020afa-9935-4796-8409-b5c0d98cee29_1_tul_BA Lawn & Landscape-Kioti
+80bd6c0c-94fe-403f-8420-020ba14dd953_1_tul_BA Lawn & Landscaping-Toro
+86b43ff7-c509-488c-9dcc-72ad9f35fb33_1_tul_BA Lawn & Landscape-Gravely
+
+location extension created in account level in Adwords and shows feed in SOAP UI, API error comes while deployment (CampaignFeedError.CANNOT_ADD_FOR_DELETED_FEED) 
+
+#-----------------------------------------------------------------------------------------------------------
+# Ad Extension Problems Alert : LOCATION_EXTENSION
+#-----------------------------------------------------------------------------------------------------------
+Category:   LOCATION_EXTENSION
+Code:   CampaignFeedError.NO_EXISTING_LOCATION_CUSTOMER_FEED
+Offending Field:   operations[2].operand.feedId
+Offending Content:   FeedId{id=70122059}
+
+
+Issue : Location extension is not creating in Adwords.
+Root cause : it may be because of customer id not created by google to map with gmdID.
+
+
+1. Check if loc ext is created in GMB : Login in gmb account and search for searchEngineIdentifier
+2. Use CustomerFeedServiceSoapBinding (request1) project and get result there should no enabled any for place holder 7. 
+   You may get no result in that case to get feedID to add in 3rd step : get feedServiceSoapBinding request in whihc you can remove predicate.
+   Result will have :
+                <id>70122059</id>
+               <name>GMBLocationExtension</name>
+          
+          AND
+               <id>70122056</id>
+               <name>CallExtension</name>
+    with status  <status>ENABLED</status>
+
+  
+3. Go to CustomerFeedServiceSoapBinding->mutate->Add GMB => add feed id <feedId>70122059</feedId> hit run and recheck again step 2 . u will have result . 
+4. Now verify in tables for current mapping.
+
+mysql> use content_editor_google;
+select * FROM gce_feed WHERE searchEngineUserID=183;
++-----+--------------------+------------------------+----------------------+
+| id  | searchEngineUserID | searchEngineIdentifier | name                 |
++-----+--------------------+------------------------+----------------------+
+| 343 |                183 |               70122056 | CallExtension        |
+| 345 |                183 |               70122059 | GMBLocationExtension |
++-----+--------------------+------------------------+----------------------+
+If searchEngineIdentifier<==>feedID is null then update it.
+
+SELECT gce_campaignFeed.* FROM gce_campaignFeed JOIN gce_campaign ON gce_campaignFeed.campaignID=gce_campaign.id WHERE searchEngineUserID=752 and matchingFunctionLHOperand='GMB_LOCATION_ID';
++------+------------+--------+---------------------------+---------------------------+---------------------------+------------------+
+| id   | campaignID | feedID | matchingFunctionLHOperand | matchingFunctionOperation | matchingFunctionRHOperand | placeholderTypes |
++------+------------+--------+---------------------------+---------------------------+---------------------------+------------------+
+| 2878 |       1945 |    345 | GMB_LOCATION_ID           | IN                        | 68                        | 7                |
+| 2879 |       1946 |    345 | GMB_LOCATION_ID           | IN                        | 68                        | 7                |
++------+------------+--------+---------------------------+---------------------------+---------------------------+------------------+
+
+
+select * from gce_gmbLocation where id=68;
+select * from gce_gmbLocation where id=368;
+
+mysql> desc gce_campaignFeedPendingChange;
++----------------+-------------------------------+------+-----+-------------------+-----------------------------+
+| Field          | Type                          | Null | Key | Default           | Extra                       |
++----------------+-------------------------------+------+-----+-------------------+-----------------------------+
+| campaignFeedID | int(11)                       | NO   | PRI | NULL              |                             |
+| type           | enum('add','update','delete') | NO   |     | NULL              |                             |
+| tryCount       | tinyint(3) unsigned           | NO   |     | 0                 |                             |
+| isFailed       | enum('true','false')          | NO   |     | false             |                             |
+| requestTime    | timestamp                     | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
++----------------+-------------------------------+------+-----+-------------------+-----------------------------+
+
+select * from gce_campaignFeedPendingChange where campaignFeedID in (2878,2879); # This table should be empty.
+
+Note: If you getting duplicate feed error then :
+- select * from gce_feedError where feedID=345;
+  delete from gce_feedError where feedID=345;
+- delete from gce_feedPendingChange where feedID=345;
+
+Once verfy all above mapping . redeploy order.
+
+
+ya29.Gl1hBmLYxXCLRktjmF2_WRk-MLJGu-bdFJPXwzaFRj6-WHZFRCiHsSEIkCdC-rROkT_p0LJTuKpYg0QtyTwRcyEmqlLhnSZj2RMqz5lnyOqIAXPUQHbn53ec4xuFTU8
+
+Verify Feed mapping:
+====================
+
+select * FROM gce_feed WHERE searchEngineUserID=183;
++-----+--------------------+------------------------+----------------------+
+| id  | searchEngineUserID | searchEngineIdentifier | name                 |
++-----+--------------------+------------------------+----------------------+
+| 343 |                183 |               70122056 | CallExtension        |
+| 345 |                183 |               70122059 | GMBLocationExtension |
++-----+--------------------+------------------------+----------------------+
+If searchEngineIdentifier<==>feedID is null then update it.
+
+select gce_campaignFeed.* from gce_campaignFeed JOIN gce_campaign ON gce_campaignFeed.campaignID=gce_campaign.id WHERE searchEngineUserID=587 and matchingFunctionLHOperand='GMB_LOCATION_ID';
++------+------------+--------+---------------------------+---------------------------+---------------------------+------------------+
+| id   | campaignID | feedID | matchingFunctionLHOperand | matchingFunctionOperation | matchingFunctionRHOperand | placeholderTypes |
++------+------------+--------+---------------------------+---------------------------+---------------------------+------------------+
+| 2878 |       1945 |    345 | GMB_LOCATION_ID           | IN                        | 68                        | 7                |
+| 2879 |       1946 |    345 | GMB_LOCATION_ID           | IN                        | 68                        | 7                |
++------+------------+--------+---------------------------+---------------------------+---------------------------+------------------+
+
+
+select * from gce_gmbLocation where id=68;
+
+mysql> desc gce_campaignFeedPendingChange;
++----------------+-------------------------------+------+-----+-------------------+-----------------------------+
+| Field          | Type                          | Null | Key | Default           | Extra                       |
++----------------+-------------------------------+------+-----+-------------------+-----------------------------+
+| campaignFeedID | int(11)                       | NO   | PRI | NULL              |                             |
+| type           | enum('add','update','delete') | NO   |     | NULL              |                             |
+| tryCount       | tinyint(3) unsigned           | NO   |     | 0                 |                             |
+| isFailed       | enum('true','false')          | NO   |     | false             |                             |
+| requestTime    | timestamp                     | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
++----------------+-------------------------------+------+-----+-------------------+-----------------------------+
+
+select * from gce_campaignFeedPendingChange where campaignFeedID in (2878,2879); # This table should be empty.
+
+Note: If you getting duplicate feed error then :
+- select * from gce_feedError where feedID=345;
+	delete from gce_feedError where feedID=345;
+- delete from gce_feedPendingChange where feedID=345;
+- select * from gce_feedPendingChange where feedID=345;
+
+Once verfy all above mapping . redeploy order.
+
+ya29.Gl2-BZvZjrZZNDwaiWfKhWCqR6o3eVHJXB1OW8551i0M2WVAGBUjJ4l6xy_Y5hNSKsIDcfAW70rvpmj2JQnWftP7k1e9Fjmnu6krWEgVcn97RNirKZklrLv8c16gUPw

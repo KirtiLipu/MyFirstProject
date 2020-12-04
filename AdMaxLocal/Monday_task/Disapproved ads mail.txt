@@ -1,0 +1,20 @@
+DISAPPROVED ADS 
+
+SUB: Disapproved Ads - <reseller>
+TO: alex,nathan,raghu,madhvi
+CC: guru,mukesh
+
+Hi All,
+
+We have found disapproved Ads for following merchant and reseller through our script . Please have a look.
+
+
+
+
+DISAPPROVED ADS Through tickets
+Hi All,
+
+Found disapproved ads on Vdeck. Please have a look.
+
+Reseller	Merchant_UID	Merchant Name
+Vdeck	04b7abc9-9721-4993-801d-bb337522def0	Mary Kozanian

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="06392b64-2d7f-4b5d-9f99-8c3d2977f3ad" activeEnvironment="Default" name="GMB Locations" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="31638c80-23d9-4c0d-b810-60423fbb9a93" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://mybusiness.googleapis.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://mybusiness.googleapis.com</con:endpoint></con:endpoints><con:resource name="Update" path="/v4/accounts/106643693877890287500/locations/01113786967199097073" id="035a675e-de16-4917-a007-9f8b6ebda761"><con:settings/><con:parameters/><con:method name="Update" id="7812f385-407f-4ac1-8d7d-698308f69f83" method="PATCH"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json; charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:ns="https://mybusiness.googleapis.com/v4/accounts/104671289157301428210/locations/10975452445347067676">ns:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json; charset=UTF-8</con:mediaType><con:status>400 500 401 403</con:status><con:params/><con:element xmlns:ns="https://mybusiness.googleapis.com/v4/accounts/104671289157301428210/locations/10975452445347067676">ns:Fault</con:element></con:representation><con:request name="Update" id="91bbc99b-caa0-4aae-8688-a23f042f3ed2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer ya29.Gl1mB314iwkl_0lm-0szw1W0UEImSE58by91qu3PgPFsQpFnw0Lk4A_pRXGw_VlEiF9k2su_t9ncn4KVqw2jIqUlHhTORNFOpdvYhgif9b76KsiNKbaJQhpPAm_SN1Y" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://mybusiness.googleapis.com</con:endpoint><con:request>{
+  "address" : {
+    "addressLines" : [ "1900 S. Sepulveda Blvd.", "" ],
+    "administrativeArea" : "CA",
+    "locality" : "Los Angeles",
+    "postalCode" : "90025",
+    "regionCode" : "US"
+  },
+  "labels" : [ "9466714215" ],
+  "locationName" : "VCA West Los Angeles",
+  "name" : "accounts/106643693877890287500/locations/01113786967199097073",
+  "primaryCategory" : {
+    "categoryId" : "gcid:animal_hospital"
+  },
+  "storeCode" : "6b3851f3-af83-4848-aff0-dc3047a65063",
+  "websiteUrl" : "http://emergency.vcahospitals.com/"
+}</con:request><con:originalUri>https://mybusiness.googleapis.com/v4/accounts/104671289157301428210/locations/10975452445347067676</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder><con:entry/></con:parameterOrder></con:request></con:method></con:resource><con:resource name="Create" path="/v4/accounts/{accountid}/locations" id="035a675e-de16-4917-a007-9f8b6ebda761"><con:settings/><con:parameters><con:parameter><con:name>accountid</con:name><con:style>TEMPLATE</con:style></con:parameter><con:parameter><con:name>requestId</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="Create" id="7812f385-407f-4ac1-8d7d-698308f69f83" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json; charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:ns="https://mybusiness.googleapis.com/v4/accounts/104671289157301428210/locations/10975452445347067676">ns:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json; charset=UTF-8</con:mediaType><con:status>400 500 401 403 409</con:status><con:params/><con:element xmlns:ns="https://mybusiness.googleapis.com/v4/accounts/104671289157301428210/locations/10975452445347067676">ns:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Create" id="91bbc99b-caa0-4aae-8688-a23f042f3ed2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Authorization" value="Bearer ya29.a0AfH6SMCsC6-DXvcZ7Y0ieJGFe-rZJtg6pYeEzWO4RmZUprcN5r3P1Ya4hVMoQJUAb356UbEIucgSuhOvJDToWcUTBXSkvDKRTV2ltMlqC8l5kjfU3pXOrl8Yk5lhODUZOwcb0vhLR2GNXeyhp7OOgK7unNN3N4ta1zTrYA" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>https://mybusiness.googleapis.com</con:endpoint><con:request>{
+ "address" : {
+   "addressLines" : [ "367 Clear Creek Dr", "" ],
+   "administrativeArea" : "GA",
+   "locality" : "Lavonia",
+   "postalCode" : "30553",
+   "regionCode" : "US"
+ },
+ "labels" : [ "b5676b06-ff10-43cd-8808-e5deeb196a64" ],
+ "languageCode" : "en-US",
+ "locationName" : "St. Mary's Sacred Heart Hospital",
+ "primaryCategory" : {
+   "categoryId" : "gcid:doctor"
+ },
+ "primaryPhone" : "513-857-1647",
+ "storeCode" : "b5676b06-ff10-43cd-8808-e5deeb196a64_1",
+ "websiteUrl" : ""
+}</con:request><con:originalUri>https://mybusiness.googleapis.com/v4/accounts/104671289157301428210/locations/10975452445347067676</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="accountid" value="106643693877890287500"/>
+  <con:entry key="requestId" value="b5676b06-ff10-43cd-8808-e5deeb196a64_1"/>
+</con:parameters><con:parameterOrder><con:entry>accountid</con:entry><con:entry>requestId</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
