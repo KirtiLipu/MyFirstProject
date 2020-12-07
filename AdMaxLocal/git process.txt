@@ -1,0 +1,100 @@
+/var/atlassian/application-data/bitbucket
+
+#-------------------------------------------------------------------------------------------------------------------------------
+#     Git, git, bit-bucket, bit, repository
+#-------------------------------------------------------------------------------------------------------------------------------
+https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.
+step :
+ 1.git status
+ 2. git pull origin develop 
+	cp /root/amlcontent/USContent_2018-03-14/business_areas.csv
+	cp /root/amlcontent/USContent_2018-03-14/gmb_categories_map_us.csv gmb_categories.csv
+	copy ads and keywords from local repository to following directory
+	/root/bitbucket/core-content/usa/business_taxonomy/sem
+ 3. git add filenames after copy the file in local repository in core-content folder (usa) 
+   again check git status.
+ 4. git commit -am "AMLOPS-4684 : New BAs - 14/03/2018" on core-content
+ 5. git push origin develop
+ 
+ 
+
+- Creating new local repository:
+	git init <repository name>
+
+cloning a new repository
+git clone git@bitbucket.org:tsa/ops-reporting.git
+git clone https://kirti_bit@bitbucket.org/tsa/core-content.git  
+git clone git@bitbucket.org:tsa/core-content.git  
+
+git pull origin develop
+git status
+git branch
+git branch -a
+
+
+git commit -am "description"
+git push origin develop
+
+#to add new branch
+git pull origin release/3.0.0
+or
+git clone -b release/3.0.0
+
+# switch to new branch
+git checkout -b release/3.0.0
+
+# switch to another branch
+git checkout develop
+
+warning: LF will be replaced by CRLF in
+
+
+# To fetch all new branches
+git fetch origin
+
+then
+git checkout -b release/3.0.0
+
+# Merging :
+# Merge develop branch into master
+pull both the branch first. ( git pull origin develop git pull origin master )
+change to master branch ( git checkout master )
+git merge develop
+git commit -am "Merging develop to master"
+git push origin master
+
+------
+# Source
+
+https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
+https://git-scm.com/docs/gittutorial
+
+commit script:ops-script -> master
+1.Check for the right branch(master )
+command : git branch
+1.pull the repository 
+command : git pull origin master
+3. copy the script and save in a file 
+4. to check the git status
+command: git status
+5.git add file name.
+6.git commit -am "AMLOPS-4321: Automate bid set requests"
+7.git push origin master
+
+2018-04-24 -- commit 
+
+Set date from the command line:
+================================
+date +%Y%m%d -s "20120418"
+
+Set time from the command line:
+===============================
+date +%T -s "11:14:00"
+
+Set time and date from the command line:
+========================================
+date -s "24 APR 2018 12:55:00"
+
+timedatectl set-time "2018-04-24 12:55:40"
+
+hwclock --set --date="2018-04-24 12:55:40"

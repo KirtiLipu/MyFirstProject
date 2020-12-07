@@ -1,0 +1,83 @@
+Disapproved Ads :
+ 1. Destination is not working.
+ 2. copyrighted content
+ 3. Ad text too long ( head 25 char and display URL - 35 char )
+ 4. Ad contains only capital words.
+ 5. too many exclamation point ( only 1 allowed )
+ 
+Site link Extension report :
+ 1. Ad performance ,clicks, impression, item state, approval status
+ 
+taxonomy file :
+ 1. Contains Business Area and Business Location for every realm.
+ 
+Call data upload :
+ 1. call extension that leads to phone calls.
+ 2. Track the phone calls from the ads.
+ 
+Bid adjustment :
+ 1. To set the new bid of some specific account or particular BAID of an account.
+ 2. 
+carryover adjustment:
+Accrued carryover and redeployed :
+Remaining budget:
+Users access and remove:
+feed removal :
+radius boost request:
+
+
+
+June 2018:
+cmg account level carryover script modification ( update reseller name column missing in report)
+modifiying nagios configuration file 
+Log analysis to find out the root cause of the problem.
+sanity test
+
+expect more handling tickets in coming days and resolve with 100% accracy within given time limit.
+
+
+
+I have gone through different automated work and have written some no of automated scripts in each quarter, and some other scripts that are not set in real time, but can be used in regular work. Manual task timing has decreased compared to the previous.
+
+I have learned and able to configure Nagios checks and created new plugins in real time. Modified some existing plugins where we get false alerts to check internal functions and processes and implement new plugins.
+
+Will record any issues that occures many times, then plan to work on the changes what needs to be done and discuss with the team and analyze and find out the permanent solution.
+
+Will record any problems that occur many times, then plan to work on changes that discuss with the team and analyze and find a permanent solution.
+
+
+I enjoy the work culture and coordination of my colleagues and make the proper responsibilities of my position.
+
+I believe the problem solving skills work mainly on complex problems, this application is essential for operation jobs, and then work together in a small group to make a pitch to present the idea to the decision makers of the company.
+
+Work together with the decision makers of the company to prepare a pitch in a small group to present ideas.
+
+We mainly focused on each alert and decided that which is more necessary for the production environment and which has more impact on the ongoing internal 
+
+
+bitbucket account
+vmware installation
+
+restart services in order:
+jboss 
+listener
+
+tomcat8 
+tomcat
+httpd - for maintainance
+
+Below are the details on the SFTP location:
+
+Server : xfer.coxmediagroup.com
+Port :22
+User Name : digitalfeed  
+Password : cmgdigf1234_
+Folder : /digitalfeed/adjusterfeed
+
+
+
+
+
+yj issue:
+
+

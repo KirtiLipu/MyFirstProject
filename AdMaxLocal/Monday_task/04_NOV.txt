@@ -1,0 +1,53 @@
+Note down these step this task will be WEEKLY MONDAY 
+
+1. open report tab
+2. find Sitelinks extension performance report and run for current date
+3. Filter : Disapproved,item state-enabled
+4. takeout only account column and remove test or smoke account and _1
+5. send report to nate ,alex and cc guru,mukesh
+
+
+Get Disapproved and send to team:
+-AML22,-AML12 aml,-AML26,AML17,-AML28
+
+AML12-aml
+1.loging to core
+2. grep SEUID for current date.
+	grep 'Found Disapproved Ad' /var/local/tsa/log/2017-11-06/getdisapprovedads.sh_04.log | awk '{print $6}' | sort | uniq
+3. Find the merchant from database by using seuid.
+	select description from tsacommon.searchEngineUsers where id in (500,567,570);
+4. Ignore ,demo and smoke account .
+5. Verify in Adword if they have really disapproved ads	then report to team.
+
+
+
+
+greping seuid
+grep 'Found Disapproved Ad' /var/local/tsa/log/2017-11-02/getdisapprovedads.sh_04.log | awk '{print $6}' | sort | uniq
+500]
+540]
+
+AML26 -aml
+1011,1015,173,198,254,304,312,374,383,388,390,416,428,439,465,480,484,496,508,513,524,553,555,556,565,566,593,606,626,631,643,644,648,653,665,677,681,682,690,716,751,808,817,819,852,875,892,945,948,989
+
+
+| c7959955-b30f-4ac4-869b-1f56a4ef7ef0_1_seogears_Moravcik                        |
+| a6318646-cc92-43e1-96d2-91b413069ed8_1_seogears_Empire State Concrete Polishing |
+| 433bb472-e641-4cb9-8500-2eea8042b2bf_1_seogears_JV Custom Iron                  |
+ 36a90438-e814-4c9e-8b29-d96db3467bc0_1_seogears_Patriot Fence & Roofing         |
+
+AML22 -cmg
+155,216,286,340,357,40,560,82
+
+2a1a7b47-19b4-4df5-a974-d2b0b486b6a5_1_tul_Smith Farm and Garden - Tulsa Radio            
+874b0d9f-515a-48d9-9f0b-1b56407c013c_1_cmgohio_A+1 Able Pest Doctors                       
+
+AML28 - aml
+209,216,219      
+
+ be27d9d0-ecc9-49c1-a3ad-27c88b2d83c0_1_seogearsca_Best Way Heating   
+
+AML12 - aml
+500,567,570 
+
+ 398d4a28-f90d-48de-82c9-a662298c11c6_1_activedatamobile_Swan Plastic Surgery - Sarasota 

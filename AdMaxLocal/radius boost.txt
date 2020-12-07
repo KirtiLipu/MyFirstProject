@@ -1,0 +1,43 @@
+Radius Boost
+
+EIG : aml26
+
+for 50% Targettingfactor = 1.5
+for 100%  Targettingfactor = 2
+for 200% Targettingfactor = 3
+
+File in monman2 server
+-----------------------
+Path to the File :
+/home/amlops/ops-scripts/techOps-Utils/AMLUpdatePointRadiusTargetting.py
+
+./AMLUpdatePointRadiusTargetting.py db-host MerchantUUID Targettingfactor
+
+Usage: ./AMLUpdatePointRadiusTargetting.py  <mysql server name> <customerID> <pointRadiusMultiplierValue>
+Example: /home/amlops/ops-scripts/techOps-Utils/AMLUpdatePointRadiusTargetting.py aml26-mysql1 7de67576-db94-4ce6-af06-4191194b1535 3
+
+
+/home/amlops/ops-scripts/techOps-Utils/AMLUpdatePointRadiusTargetting.py aml26-mysql1 29138641-9caf-4185-870b-fab3e872b5b7 3
+/home/amlops/ops-scripts/techOps-Utils/AMLUpdatePointRadiusTargetting.py aml26-mysql1 6dfef88a-a82f-40e3-b96a-746a0dbcc2e5 1.5
+
+43053547-27d8-4350-8859-e2f94d45e20f_2_longisland-cs_Ernest M.D.-Body Contouring Miamai
+
+
+
+Vdeck:
+
+f57c2de7-bfb7-46d3-8509-cf4ffd1f4c8a	200%
+
+Hostgator:
+
+ee9f999d-6261-451f-8dbb-2ddd0446d9a0	200%
+
+
+TO CHECK THIS UPDATE IN DB:
+mms_common.pointRadiusModifiers
+
+Verify in search Engine:
+Adwords -> Click on GT campaign -> Hit Settings TAB -> Location TAB -> Look the values
+
+
+supercalifragilisticexpialidocious

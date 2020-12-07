@@ -1,0 +1,70 @@
+[TSAApp@aml22-core1 2018-02-19]$ grep '===============' admax-process.sh_11.log
+=================== Staging google with [--date 2018-02-18  --admax  -d3 -z America/New_York]
+=================== Staging bing with [--date 2018-02-18  -rt admax  -d3 -z America/New_York]
+=================== Staging yahoojapan with [--date 2018-02-18  -rt admax  -d3 -z America/New_York]
+2018-02-19 11:11:05.965 (3) [main]: =============== Starting Google MCC AdMax Report ================
+2018-02-19 11:11:07.835 (3) [main]: =============== Starting YahooJapanReport ================
+2018-02-19 11:11:07.853 (3) [main]: =============== Starting BingReport ================
+2018-02-19 11:11:07.959 (3) [main]: =============== Completed YahooJapanReport ================
+2018-02-19 11:11:48.942 (3) [main]: =============== Completed Google MCC AdMax Report ================
+2018-02-19 11:13:28.050 (3) [main]: =============== Completed BingReport ================
+=================== Starting ABU with [--date 2018-02-18 -d3 --distribution 3 -z America/New_York]
+2018-02-19 11:13:40.047 (3) [main]: =============== Starting AdMax Summarizer ================
+2018-02-19 11:24:28.743 (3) [main]: =============== Completed AdMax Summarizer ================
+2018-02-19 11:24:28.762 (3) [main]: =============== Stats ================
+=================== Starting ABU with [--date 2018-02-18 -d3 --distribution 147 -z America/New_York]
+2018-02-19 11:24:30.116 (3) [main]: =============== Starting AdMax Summarizer ================
+2018-02-19 11:27:13.222 (3) [main]: =============== Completed AdMax Summarizer ================
+2018-02-19 11:27:13.233 (3) [main]: =============== Stats ================
+=================== Starting ABU with [--date 2018-02-18 -d3 --distribution 178 -z America/New_York]
+2018-02-19 11:27:14.580 (3) [main]: =============== Starting AdMax Summarizer ================
+2018-02-19 11:29:04.950 (3) [main]: =============== Completed AdMax Summarizer ================
+2018-02-19 11:29:04.961 (3) [main]: =============== Stats ================
+=================== Starting AdMax Bid Updater with [-d3 --distribution 3]
+=================== Starting AdMax Bid Updater with [-d3 --distribution 147]
+=================== Starting AdMax Bid Updater with [-d3 --distribution 178]
+=================== Checking for AdMax Bid Updater Issues
+
+
+
+
+[TSAApp@aml22-core1 2018-02-19]$ grep '===============' admax-process.sh_12.log
+=================== Staging google with [--date 2018-02-18  --admax  -d3 -z America/Chicago]
+=================== Staging bing with [--date 2018-02-18  -rt admax  -d3 -z America/Chicago]
+=================== Staging yahoojapan with [--date 2018-02-18  -rt admax  -d3 -z America/Chicago]
+2018-02-19 12:11:06.276 (3) [main]: =============== Starting Google MCC AdMax Report ================2018-02-19 12:11:06.281 (3) [main]: Debug Level set to 3
+2018-02-19 12:11:07.540 (3) [main]: =============== Starting YahooJapanReport ================
+2018-02-19 12:11:07.668 (3) [main]: =============== Completed YahooJapanReport ================
+2018-02-19 12:11:08.246 (3) [main]: =============== Starting BingReport ================
+2018-02-19 12:11:31.616 (3) [main]: =============== Completed Google MCC AdMax Report ================
+2018-02-19 12:13:08.371 (3) [main]: =============== Completed BingReport ================
+=================== Starting ABU with [--date 2018-02-18 -d3 --distribution 3 -z America/Chicago]
+2018-02-19 12:13:16.870 (3) [main]: =============== Starting AdMax Summarizer ================
+2018-02-19 12:15:51.649 (3) [main]: =============== Completed AdMax Summarizer ================
+2018-02-19 12:15:51.660 (3) [main]: =============== Stats ================
+=================== Starting ABU with [--date 2018-02-18 -d3 --distribution 147 -z America/Chicago]
+2018-02-19 12:15:53.092 (3) [main]: =============== Starting AdMax Summarizer ================
+2018-02-19 12:16:45.978 (3) [main]: =============== Completed AdMax Summarizer ================
+2018-02-19 12:16:45.979 (3) [main]: =============== Stats ================
+=================== Starting ABU with [--date 2018-02-18 -d3 --distribution 178 -z America/Chicago]
+2018-02-19 12:16:47.258 (3) [main]: =============== Starting AdMax Summarizer ================
+2018-02-19 12:17:23.672 (3) [main]: =============== Completed AdMax Summarizer ================
+2018-02-19 12:17:23.673 (3) [main]: =============== Stats ================
+=================== Starting AdMax Bid Updater with [-d3 --distribution 3]
+=================== Starting AdMax Bid Updater with [-d3 --distribution 147]
+=================== Starting AdMax Bid Updater with [-d3 --distribution 178]
+=================== Checking for AdMax Bid Updater Issues
+
+[TSAApp@aml22-core1 2018-02-20]$ grep '===============' sepull3.sh_13.log
+=================== Staging Google with [--date 2018-02-19 -d3]
+2018-02-20 13:00:02.713 (3) [main]: =============== Starting Google MCC Report ================
+2018-02-20 13:05:24.318 (3) [main]: =============== Completed Google MCC Report ================
+=================== Starting Search Engine Report Summarizer for Google with [--date 2018-02-19 -d3]
+2018-02-20 13:05:25.147 (3) [main]: =============== Starting Search Engine Summarizer for Mon Feb 19 00:00:00 UTC 2018 ================
+2018-02-20 13:30:06.587 (3) [main]: =============== Completed Search Engine Summarizer ================
+=================== Starting Warehouse Summarizer for Google with [--date 2018-02-19 -d3]
+2018-02-20 13:30:09.080 (3) [main]: =============== Starting Warehouse Summarizer ================
+2018-02-20 13:37:52.632 (3) [main]: =============== Completed Warehouse Summarizer ================
+=================== Done.
+
+

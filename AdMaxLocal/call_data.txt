@@ -1,0 +1,25 @@
+CALL DATA UPLOAD
+
+#call feed data in = tsacommon.callFeedExecution
+
+---Following are the steps to upload call data in our system.
+
+Request comes from Shashi to upload call lead data into its respective server.
+
+1) Download the the call-leads data text file sent by Shashi.
+2) Tail the call leads log in another tab /var/local/tsa/log/aml-merchant-leads/aml-merchant-leads.log
+3) Move the file to its respective core server and move in following directory and observe log.
+                                    /var/local/tsa/leads/incoming
+4) once done verify in database with follwoing query.				
+               select * from tsacommon.callFeedExecution;
+               select * from tsacommon.callFeedExecution where runTimestamp like '2017-11%';  
+			   
+LOG LOCATION:
+	
+
+
+smb.merchant_performance
+tsacommon.callFeedExecution
+
+
+st-tracker.callFeedData := where the call data store 

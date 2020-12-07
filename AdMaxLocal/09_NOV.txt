@@ -1,0 +1,144 @@
+merchant_UUID=$(grep -c 'Assigned existing seUserID' tsa-admax-jmslistener.log.2019-03-17-032001 | awk '{print$10}' | cut -d '_' -f 1 | uniq
+
+grep 'Assigned existing seUserID' tsa-admax-jmslistener.log.2019-03-17-032001 |  awk '{print$10}'
+
+
+
+grep 'Found Disapproved Ad' /var/local/tsa/log/2019-12-16/getdisapprovedads.sh_18.log | awk '{print $6}' | sort | uniq
+
+
+
+grep 'Found Disapproved Ad' /var/local/tsa/log/2019-12-16/getdisapprovedads.sh_04.log | awk '{print $6}' | sort | uniq | tr -d ']'
+
+
+select description from tsacommon.searchEngineUsers where id in (1036,1133,114,1145,1210,1363,1380,1388,268,292,300,415,996);
+
+select description from tsacommon.searchEngineUsers where id in (1052,1094,436,606,622,941,990);
+
+
+merchantUUID, merchant Name, reseller name, distribution 
+
+select distinct r.name as "Reseller Name",m.id as "merchant_UUID", sea.description as "Campaign Name", case  when sea.distributionID=3 then "Google"  when sea.distributionID=147 then "Bing"  when sea.distributionID=177 then "Facebook"  else "sea.distributionID"  end as "Distribution", m.display as "Merchant Name", substring_index(gtae.reason,",",-1) from smb.merchants m join smb.resellers r on m.reseller_id=r.id join tsacommon.searchEngineAccounts sea on m.id=substring_index(sea.description,"_",1) join gce_campaign gc on sea.description=gc.name join gce_adGroup gad on gc.id=gad.campaignID join gce_textAd gta on gad.id=gta.adGroupID join gce_textAdError gtae on gta.id=gtae.textAdID where sea.searchEngineUserID="415" and gc.status='Active';
+
+
+select distinct r.name as "Reseller Name",m.id as "merchant_UUID", sea.description as "Campaign Name", case  when sea.distributionID=3 then "Google"  when sea.distributionID=147 then "Bing"  when sea.distributionID=177 then "Facebook"  else "sea.distributionID"  end as "Distribution", m.display as "Merchant Name", substring_index(gtae.reason,",",-1) as "Reason" from smb.merchants m join smb.resellers r on m.reseller_id=r.id join tsacommon.searchEngineAccounts sea on m.id=substring_index(sea.description,"_",1) join content_editor_google.gce_campaign gc on sea.description=gc.name join content_editor_google.gce_adGroup gad on gc.id=gad.campaignID join content_editor_google.gce_textAd gta on gad.id=gta.adGroupID join content_editor_google.gce_textAdError gtae on gta.id=gtae.textAdID where sea.searchEngineUserID="1363" and gc.status='Active' limit 2;
+
+
+select distinct reason from gce_textAdError  where textAdID in (select id from gce_textAd where adGroupID in( select id from gce_adGroup where campaignID in( SELECT id from gce_campaign where searchEngineUserID=276)));
+
+aml12
+
+Merchant UUID	Merchant Name
+ae0d510b-2003-4c62-acc9-fa56d5fbea07	Alpha Floral
+24fefedc-9832-4145-aa66-61d8f05bc1e4	Crickets Flowers
+d2404cc1-0523-44b4-b7b5-eb4e25876118	Evans Flowers
+273d24e7-6bab-4b37-9736-650009cc782b	Playa Del Rey Florist
+c0f0fb24-5827-481c-bc7d-394221156ece	Bassett Flowers
+13e288f7-8553-472f-bd96-59c56c27e039	Gateway Florist
+
+
++------+--------------------------------------------------------------------------------------+
+| id   | description                                                                          |
++------+--------------------------------------------------------------------------------------+
+|  114 | ae0d510b-2003-4c62-acc9-fa56d5fbea07_1                                               |
+|  268 | d2404cc1-0523-44b4-b7b5-eb4e25876118_2_bloomnation_Evans Flowers                     |
+|  292 | c0f0fb24-5827-481c-bc7d-394221156ece_1_bloomnation_Bassett Flowers                   |
+|  300 | 13e288f7-8553-472f-bd96-59c56c27e039_2_bloomnation_Gateway Florist                   |
+|  415 | 34278401-119f-4d6c-a2e7-8a6da8311c74_1_haineslocal_Church Creative Flooring          |
+|  996 | 34ca2f56-a1a2-4255-a351-0404ee18df44_1_haineslocal_Destinations Tours and Travel Inc |
+| 1036 | fca79fbe-99f3-429c-9c72-d307406eb238_1_lasso_1st Exit Bail Bonds                     |
+| 1145 | c6436ca5-8dc1-438f-8a1f-754c090ef679_2_lasso_Lasso Media                             |
+| 1210 | 7dd0dfb7-d0ef-4f3f-ad5f-7138da7209b5_1_acbj_billingtestaccount01                     |
+| 1363 | dada6930-e93b-4113-a564-dade95d215df_1_activedatamobile_Naples Vision of Beauty      |
+| 1380 | 85ff39f4-c50d-4326-997b-126de8fb7ed9_1_vendasta_TestMerchant01                       |
+| 1388 | d6beee9c-eaab-47cf-80c6-e4571edf8699_1_sbgtv_Smoke_test01                            |
++------+--------------------------------------------------------------------------------------+
+
+
+| ef2dc60c-4189-4ddc-aa69-163dcbfc4cdb_1                                               |
+| 295b9b09-14fb-4515-88c3-f5cb9e9e8bdd_1                                               |
+| 1b8a30e7-ab25-48ed-b4fb-643eb635e818_1                                               |
+| ae0d510b-2003-4c62-acc9-fa56d5fbea07_1                                               |
+| d2404cc1-0523-44b4-b7b5-eb4e25876118_2_bloomnation_Evans Flowers                     |
+| 13e288f7-8553-472f-bd96-59c56c27e039_2_bloomnation_Gateway Florist                   |
+| 34278401-119f-4d6c-a2e7-8a6da8311c74_1_haineslocal_Church Creative Flooring          |
+| 813ccec6-6ac3-4b35-a963-fc3d451949df_1_bloomnation_Sadas Flowers                     |
+| 34ca2f56-a1a2-4255-a351-0404ee18df44_1_haineslocal_Destinations Tours and Travel Inc |
+| dada6930-e93b-4113-a564-dade95d215df_1_activedatamobile_Naples Vision of Beauty      |
+
+===
+| ef2dc60c-4189-4ddc-aa69-163dcbfc4cdb_1                                          |
+| 1b8a30e7-ab25-48ed-b4fb-643eb635e818_1                                          |
+| ae0d510b-2003-4c62-acc9-fa56d5fbea07_1                                          |
+| d2404cc1-0523-44b4-b7b5-eb4e25876118_2_bloomnation_Evans Flowers                |
+| 13e288f7-8553-472f-bd96-59c56c27e039_2_bloomnation_Gateway Florist              |
+| 34278401-119f-4d6c-a2e7-8a6da8311c74_1_haineslocal_Church Creative Flooring     |
+| dada6930-e93b-4113-a564-dade95d215df_1_activedatamobile_Naples Vision of Beauty |
+
+alexandros.moustakas@endurance.com 
+
+Aml17
+510
+165
+Reseller Name	Merchant UUID	Merchant Name
+rockbrand	00bfebc1-aca6-41dd-94e1-d8f1af09c7e1	Chesapeake - Main
+
+
+
+| cd32f976-e6b2-46a5-81bc-36ab1ae41378_1_vca_VCA Ridge Road Animal Hospital |
+
+
+aml22
+
+Reseller Name			Merchant UUID					 Merchant Name
+atlr			8d08bdaa-c01b-4b52-a580-b8d370834f48	Avant Gynecology
+jaxr			761e2c53-6d55-4008-bb86-27edb9a03dd7	Seacoast Christian Academy - Jax Radio
+atlr			656f99db-c62d-4e49-8a3b-b4ffe73354fa	Marietta Plastic Surgery-Services
+atlr			b5465cc4-cdf1-4a21-a9f6-2794412b09d6	Marietta Plastic Surgery-Brand
+jaxt			e7c991c7-2799-4798-85d0-fb77b6673a08	Brown Fertility - Orlando
+bos	    		1f47e5ac-51a1-43a0-8148-3b01b0940455	Dream Smile Dental-Other BAs
+
+
+
+aml26
+
+hostgator	80eab42e-54fd-4d6d-aa2a-00b4c0e4dfb1		Jean Clinton
+hostgator	30d6d43f-8f78-411d-8845-54a1f721f7af		Wayne Brooks
+hostgator	853fab83-9aac-4b46-8961-5a01f6db8836		Jordan Lyons
+hostgator	1c534de3-16e2-4ea3-976c-1a7252b87d78		Emily Wilson
+hostgator	1832b3f2-e998-4b3b-a994-2a9c122481a5		Michael Kittle
+seogears	97d9e7c3-c458-48c2-8b78-bfae5bbbf466		Forever Bulldogges
+
+
+
+| a14267eb-d718-4c97-8c40-594ce367cae6_1_seogears_Gynecologist Reno   |
+| 783db2c2-d3d6-463d-8e16-2e227134cdcb_1_seogears_Crescent College    |
+
+| e9ba856c-d7f3-4f25-a82a-c010e7680fa7_1_hostgator_Vean Nguyen        |
+| 80eab42e-54fd-4d6d-aa2a-00b4c0e4dfb1_1_hostgator_Jean Clinton       |
+| 853fab83-9aac-4b46-8961-5a01f6db8836_1_hostgator_Jordan Lyons       |
+| 1c534de3-16e2-4ea3-976c-1a7252b87d78_1_hostgator_Emily Wilson       |
+| 1832b3f2-e998-4b3b-a994-2a9c122481a5_1_hostgator_443     |
+
+
+
+| 97d9e7c3-c458-48c2-8b78-bfae5bbbf466_1_seogears_Forever Bulldogges  |
+| 72fcdd3a-ea38-4d2b-af29-01685846687c_1_seogears_Owen Court Property |
+
+
+==
+
+| 80eab42e-54fd-4d6d-aa2a-00b4c0e4dfb1_1_hostgator_Jean Clinton                           |
+| 853fab83-9aac-4b46-8961-5a01f6db8836_1_hostgator_Jordan Lyons                           |
+| 1c534de3-16e2-4ea3-976c-1a7252b87d78_1_hostgator_Emily Wilson                           |
+| 72fcdd3a-ea38-4d2b-af29-01685846687c_1_seogears_Owen Court Property                     |
+| 1832b3f2-e998-4b3b-a994-2a9c122481a5_1_hostgator_Michael Kittle                         |
+| cd33e938-0c2d-4727-a145-6545ff766fd2_1_seogears_Bucks County & Philadelphia Real Estate |
+| 8d453b6a-1e1a-4431-bc49-77a77bc53750_1_seogears_Epoxy Garage Floor Pros                 |
+
+
+AMl-28
+
+202
+e81d56c1-9f4a-4ff5-9f6f-ae15b3882085_2_seogearsca_FreightFwdg1 LLC
+

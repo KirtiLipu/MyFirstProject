@@ -1,0 +1,46 @@
+Bid Modifier:
+
+Account level:
+  1. check setting bid adjustment in adwords.
+  2. check DB. distribution-> reseller_merchant_properties
+  3. confirm element_type. 
+  4. select * from reseller_merchant_properties where element_type='merchant'; (for account level)
+  5. update table with  proper data.
+  6. Insert into reseller_merchant_properties values (<distribution_id>,<element_type>,<element_id/merchantUUID>,<use_type>,<properties>);
+  7. Again redeploy the order in aml. (watch the log file for success deploy).
+  8. Verify ad-words for new change.  
+  
+  
+insert into reseller_merchant_properties values ('5fcc8984-2f0f-11e5-a151-feff819cdc9f','merchant','df97fca0-06bd-41c8-a16f-10a0ddee0a6a','content','{"ce.mobileBidModifier":"1.7","ce.desktopBidModifier":"","ce.tabletBidModifier":"","ce.includeSearchPartners":"true"}';
+  
+The valid range of Mobile bid modifier is from 0 to 10. Value of 0 is used to opt out of Mobile.
+Google: 
+
+0 will set to -100%
+0.2 = -80%
+0.8 = -20%
+1 = 0%
+1.25 = +25%
+2 = +100%
+3 = +200%
+
+Bing:
+
+The valid range of Mobile bid modifier is from -100 to 900. Value of -100 is used to opt out of Mobile.
+
+-100 will set to "Decrease by 100"
+-20 will set to "Decrease by 20"
+0 will set to "Increase by 0"
+100 will set to "Increase by 100"
+500 will set to "Increase by 500"
+.
+900 will set to "Increase by 900"
+  
+update reseller_merchant_properties set properties='{"ce.orderID":"4171-8859-3396-9178","ce.orderProfileID":"8281-8682-6770","ce.defaultBudget":"9000000","ce.mobileBidModifier":"0.75","ce.desktopBidModifier":"1.1","ce.tabletBidModifier":"0.65","ce.includeSearchPartners":"true","ce.parentClientCustomerID":"2726935496"}' where element_id='3533becf-30d5-4e05-9b4c-e4d31a81d680' and distribution_id='5fcc8984-2f0f-11e5-a151-feff819cdc9f';
+  
+
+| 5fcc8984-2f0f-11e5-a151-feff819cdc9f | reseller     | 3533becf-30d5-4e05-9b4c-e4d31a81d680 | content  | {"ce.orderID":"4171-8859-3396-9178","ce.orderProfileID":"8281-8682-6770","ce.defaultBudget":"9000000","ce.mobileBidModifier":"0.75","ce.desktopBidModifier":"","ce.tabletBidModifier":"","ce.includeSearchPartners":"true","ce.parentClientCustomerID":"2726935496"}                                                                                |
+
+
+  
+update reseller_merchant_properties set properties='{"ce.mobileBidModifier":"1.35","ce.desktopBidModifier":"1.10","ce.tabletBidModifier":"","ce.includeSearchPartners":"true"}' where element_id='12c21e0c-a09b-468e-8623-dc41fde33f99' and distribution_id='5fcc8984-2f0f-11e5-a151-feff819cdc9f'; 

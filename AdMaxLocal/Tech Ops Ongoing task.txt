@@ -1,0 +1,76 @@
+
+Tech Ops Scrum
+Last edited: 4h ago
+Notes
+Tech Ops task KT to US
+Bid Changes
+Confluence page ready with all info
+Kirti to build confluence page with reseller to stack mapping - DONE
+Need to figure out access - Need to give permissions to only run that script
+Taxonomy Changes
+Decision - its it safe to transfer this over to US team as it involves pulling the right files from US team.
+Kirti to check the documentation and ensure all if updated - In Progress
+Discuss within the team and then reach out to US team
+Once all good, setup a KT session with respective members (Jack/Nate/Ben ?)
+ 
+
+Regular Task
+Partner Support rejected Ben's email
+Gurpreet will investigate
+.Nate wants to update Campaign Name
+Check if there is a script for this in BM - Campaign Migrator
+Mukesh to do a test run and confirm and if works, take care of the ticket
+ 
+Production Issues
+YJ Ops Reports - In Progress
+SQR
+Mukesh ran the report and sent the sample to team
+Gurpreet to get back with further steps if any
+Campaign Report
+Mukesh ran the report and sent the sample to team
+Gurpreet to get back with further steps if any
+Keyword Updates
+Manual redeploy was required for HFC
+Keywords customization was not done for the hfc accounts
+SoR it wasn’t required
+Had this issue in couple of months back as well, jobs are stuck in Jboss
+Raise to Dev ? - Raised - Gurpreet to take it further with Dev team
+ 
+Tickets not getting created in AML Support Zendesk - NEW
+Nagios emails not coming in
+Investigate and fix
+Automation/Functionality
+Automate Chargify Alerts
+Gurpreet sent the requirements to the team
+.Requirements
+
+Chargify status for an account is pending/past due but the account has a deployed order in AML
+
+Status column: column F (have a separate module doing this match up)
+
+Payment state in success/past_due in chargify but there is no deployed order or merchant for that entity in AML
+
+Payment State column: column F
+
+Account live in AML but no payment entity in chargify
+
+Note: Will need an exclusion list for accounts that are not billed through chargify
+
+Budget for an account with deployed order in AML is different from the budget charged in
+
+Budget column: column J
+
+Kirti implemented it
+Send email to Gurpreet
+Kirti has run the script with the latest report that Micah sent
+Gurpreet to review the results with Kirti before sharing it with Micah & Ben
+Yelp Reporting - API - In Progress
+Pull daily reports from Yelp
+Mukesh working on it - SSH script
+Now Kirti working on it - Python
+Pull data and insert into database
+Data pulling into CSV from Yelp, working on DB part
+Implementation ready
+Working on finding a solution for identifying Biz ID, merchant comment..
+Waiting for kick-off
+ 
