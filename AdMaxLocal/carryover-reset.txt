@@ -128,7 +128,7 @@ nohup /usr/local/tsa/bidmgr/admax.sh -d3 -z America/New_York --date 2020-01-20 &
 	
 	/usr/local/tsa/bidmgr/admax.sh -d3 -a 1073 -z America/Chicago --date 2020-01-22
 	
-	/usr/local/tsa/bidmgr/admax.sh -d3 -a 4705 --distribution 178 -z Asia/Tokyo --date 2020-11-18
+	/usr/local/tsa/bidmgr/admax.sh -d3 -a 3986 --distribution 178 -z Asia/Tokyo --date 2020-12-05
 	
 	nohup /usr/local/tsa/bidmgr/admax.sh -d3 --date 2020-11-08 --distribution 178 -z Asia/Tokyo &> /var/local/tsa/log/2020-11-08/abu_rerun.log &
 	

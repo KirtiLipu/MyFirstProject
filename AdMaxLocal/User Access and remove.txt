@@ -26,15 +26,9 @@ monman2 server:
 
 groovy create-user.groovy -ah http://aml17-front1:8080/sapi/rest/ -cu anil.kumar@thesearchagency.com -cp 'hItS$turd8' -cr direct -u kirtiranjan.sahoo@admaxlocal.com -fn "Kirti" -ln "Sahoo" -ll TRACE -d "AMLOperations User" -ra direct
 
-groovy create-user.groovy -ah http://aml17-front1:8080/sapi/rest/ -cu anil.kumar@thesearchagency.com -cp '	' -cr direct -u mukes72@gmail.com -fn "Mukesh" -ln "kumar" -ll TRACE -d "AMLOperations User" -ra direct
-
-groovy create-user.groovy -ah http://aml26-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp 'Kirti@83' -cr hostgator -u skirtiranjan.sahoo@gmail.com -fn "Kirtiranjan"  -ll TRACE -d "Kim Smith" -ra hostgator
-
 groovy create-user.groovy -ah http://aml1-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@thesearchagency.com -cp 'TSAindia@123' -cr tsatest -u roopa.mg@admaxlocal.com -fn "Roopa" -ln "MG" -ll TRACE -d "AMLOperations User" -ra tsatest
 
 groovy create-user.groovy -ah http://aml22-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr cmgcentral -u Kunchala.Maladri@admaxlocal.com -fn "Kunchala" -ln "Maladri" -ll TRACE -d "AMLOperations User" -ra cmgcentral
-
-groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr promenade -u Kunchala.Maladri@admaxlocal.com -fn "Kunchala" -ln "Maladri" -ll TRACE -d "AMLOperations User" -ra promenade
 
 anil.kumar@thesearchagency.com
 hItS$turd8
@@ -97,11 +91,7 @@ nathan.price@admaxlocal.com, ben.gibson@admaxlocal.com, micah.levitsky@admaxloca
 
 
 
-Kim Smith (Kim.Smith@vca.com)
-
-
 groovy create-user.groovy -ah http://aml17-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr urbanairbing -u Gurpreet.Singh@admaxlocal.com -ll TRACE -fn "Gurpreet" -ln "Singh" -d "AMLOperations User" -ra urbanairbing
-
 
 groovy create-user.groovy -ah http://aml17-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr hughesnet -u ben.gibson@admaxlocal.com -ll TRACE -fn "Ben" -ln "Gibson" -d "Ben Gibson" -ra hughesnet
 
@@ -109,106 +99,11 @@ groovy create-user.groovy -ah http://aml17-front1:8080/sapi/rest/ -cu kirtiranja
 
 groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr activedatamobile -u jack.sekowski@admaxlocal.com -ll TRACE -fn "Jack" -ln "Sekowski" -d "Jack Sekowski" -ra activedatamobile
 
-
+groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr acbj -u micah.levitsky@admaxlocal.com -ll TRACE -fn "micah" -ln "levitsky" -d "micah levitsky" -ra acbj
 
 =================
-
-groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr sbgtv -u rmmazurek@compulse.com -ll TRACE -fn "Rachel" -ln "Mazurek" -d "Rachel Mazurek" -ra sbgtv
-
-groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr sbgtv -u Tbyoung@sbgtv.com -ll TRACE -fn "Tyler" -d "Tyler" -ra sbgtv
-
-Rachel Mazurek <rmmazurek@compulse.com>
-Tyler Tbyoung@sbgtv.com
-
-rockbrand:
-----------
-groovy create-user.groovy -ah http://aml17-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr cisco -u nathan.price@admaxlocal.com -ll TRACE -fn "Nathan" -ln "Price" -d "Nathan Price" -ra cisco
-
-groovy create-user.groovy -ah http://aml17-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr cisco -u alex.george@admaxlocal.com -ll TRACE -fn "Alex" -ln "George" -d "Alex George" -ra cisco
-
-groovy create-user.groovy -ah http://aml17-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr cisco -u Ben.Gibson@admaxlocal.com -ll TRACE -fn "Ben" -ln "Gibson" -d "Ben Gibson" -ra cisco
-
-groovy create-user.groovy -ah http://aml17-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr hughesnet -u mukes72@gmail.com -ll TRACE -fn "Mukesh" -ln "Kumar" -d "AMLOperations User" -ra hughesnet
-
-groovy create-user.groovy -ah http://aml17-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr cisco -u mukes72@gmail.com -ll TRACE -fn "Mukesh" -ln "Kumar" -d "AMLOperations User" -ra cisco
-
-groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr nulogicmarketing -u tabitha@nulogicmarketing.com -ll TRACE -fn "Tabitha" -ln "Burtrum" -d "Tabitha Burtrum" -ra nulogicmarketing
-
-groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr sbgtv -u oehusby@sbgtv.com -ll TRACE -fn "Olivia" -ln "Husby" -d "Olivia Husby" -ra sbgtv
-
-
-groovy create-user.groovy -ah http://aml17-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr hughesnet -u mithilesh.cg@admaxlocal.com -ll TRACE -fn "Mithilesh" -ln "CG" -d "AMLOperations User" -ra hughesnet
-
-groovy create-user.groovy -ah http://aml22-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr coxnextohio -u mithilesh.cg@admaxlocal.com -ll TRACE -fn "Mithilesh" -ln "CG" -d "AMLOperations User" -ra coxnextohio
-
-    
-Haineslocal:
-=================
-Olivia Husby oehusby@sbgtv.com
-Tabitha Burtrum - tabitha@nulogicmarketing.com
-Chrystal Covington chrystal.covington@dexyp.com
-Donald Nimrichter donald.nimrichter@dexyp.com
-James Bahou james.bahou@dexyp.com
-
-Kurstin Gale Kurstin.gale@dexyp.com
-
-groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr haineslocal -u chrystal.covington@dexyp.com -ll TRACE -fn "Chrystal" -ln "Covington" -d "Chrystal Covington" -ra haineslocal
-
-groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr haineslocal -u donald.nimrichter@dexyp.com -ll TRACE -fn "Donald" -ln "Nimrichter" -d "Donald Nimrichter" -ra haineslocal
-
-groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr haineslocal -u james.bahou@dexyp.com -ll TRACE -fn "James" -ln "Bahou" -d "James Bahou" -ra haineslocal
-
-
-groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr haineslocal -u Kurstin.gale@dexyp.com -ll TRACE -fn "Kurstin" -ln "Gale" -d "Kurstin Gale" -ra haineslocal
-
-
-
-
-Eva Robins – eva.robins@dexyp.com
-Mithun Mathew – mithun.mathew@dexyp.com
-Sarah Savelsbergh – sarah.savelsbergh@dexyp.com
-Felicia Piper – felicia.piper@dexyp.com
-Sherry Lackey – sherry.lackey@dexyp.com
-Adam Perez – adam.perez@dexyp.com
-
-
-Steve Owens  - seowens@nulogicmarketing.com
-Megan Williamson – mwilliamson@nulogicmarketing.com
-Christian Reed – creed@nulogicmarketing.com
-Fudge Van Hooser - fudge@nulogicmarketing.com
-
-groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr nulogicmarketing -u fudge@nulogicmarketing.com -ll TRACE -fn "Fudge" -ln "Van Hooser" -d "Fudge Van Hooser" -ra nulogicmarketing
-
-groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr nulogicmarketing -u mwilliamson@nulogicmarketing.com -ll TRACE -fn "Megan" -ln "Williamson" -d "Megan Williamson" -ra nulogicmarketing
-
-groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr nulogicmarketing -u creed@nulogicmarketing.com -ll TRACE -fn "Christian" -ln "Reed" -d "Christian Reed" -ra nulogicmarketing
-
-
-
-+--------------------------------------+---------+
-| id                                   | name    |
-+--------------------------------------+---------+
-| 20630151-2191-49ec-85f1-f8510e054ae2 | jaxt    |
-| 2cb60843-2239-4a55-a072-13f786f21f75 | pit     |
-| 46c3a950-b7b8-469e-8524-29a70d8cd1be | atlr    |
-| 509bdd62-a4c5-49cd-9251-049a165ef987 | san     |
-| 757878ef-7b49-41bb-a1c1-06d4c8d21e43 | ath     |
-| d827162e-48db-483c-9d81-e81f6c10d09a | atlt    |
-| ebd8806f-bd4a-4235-bd18-67bd2b0ee21b | cmgohio |
-+--------------------------------------+---------+
-
-
-groovy create-user.groovy -ah http://aml22-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr ideabar -u Robin.Hayes@coxinc.com -ll TRACE -fn "Robin" -ln "Hayes" -d "Robin Hayes" -ra ideabar
-
-groovy create-user.groovy -ah http://aml22-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr ajc -u jack.sekowski@admaxlocal.com -ll TRACE -fn "Jack" -ln "Sekowski" -d "Jack Sekowski" -ra ajc
-
-groovy create-user.groovy -ah http://aml22-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr ideabar -u Ben.Gibson@admaxlocal.com -ll TRACE -fn "Ben" -ln "Gibson" -d "Ben Gibson" -ra ideabar
-
-groovy create-user.groovy -ah http://aml22-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr ideabar -u Ben.Gibson@admaxlocal.com -ll TRACE -fn "Ben" -ln "Gibson" -d "Ben Gibson" -ra ideabar
-
-jenny@admaxlocal.com
-
-
+CMG Users:
+==============
 kyle.fennell@cmg.com
 ben.gibson@admaxlocal.com
 Burley, Cherisse (CMG-Atlanta) Cherisse.Burley@coxinc.com
@@ -232,7 +127,7 @@ Burns, Tiffanie (CMG-Atlanta) Tiffanie.Burns@coxinc.com
 
 Gatewood Ginger (CMG-Atlanta)' Ginger.Gatewood@coxinc.com
 Rios Ashley (CMG-Atlanta)' Ashley.Rios@coxinc.com
-Pilolli Apryl (CMG-Atlanta)' Apryl.Pilolli@coxinc.com
+Pilolli Apryl (CMG-Atlanta)' Apryl.Pilolli@coxinc.com'
 
 
 Mike Wilson : mike@lasso.media
@@ -243,57 +138,20 @@ mithilesh.cg@admaxlocal.com
 
 tyler.french@cmg.com
 
-rockaugmented :
--------------
-groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr acbj -u micah.levitsky@admaxlocal.com -ll TRACE -fn "micah" -ln "levitsky" -d "micah levitsky" -ra acbj
-
-groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr lasso -u Manjunath.Venkatesh@admaxlocal.com -ll TRACE -fn "Manjunath" -ln "Venkatesh" -d "AMLOperations User" -ra lasso
-
-groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr haineslocal -u micah.levitsky@admaxlocal.com -ll TRACE -fn "micah" -ln "levitsky" -d "micah levitsky" -ra haineslocal
-
-groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr bloomnation -u micah.levitsky@admaxlocal.com -ll TRACE -fn "micah" -ln "levitsky" -d "micah levitsky" -ra bloomnation
-
-groovy create-user.groovy -ah http://aml26-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr hostgator -u micah.levitsky@admaxlocal.com -ll TRACE -fn "micah" -ln "levitsky" -d "micah levitsky" -ra hostgator
-
-groovy create-user.groovy -ah http://aml26-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr seogears -u micah.levitsky@admaxlocal.com -ll TRACE -fn "micah" -ln "levitsky" -d "micah levitsky" -ra seogears
-
-groovy create-user.groovy -ah http://aml26-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr vdeck -u micah.levitsky@admaxlocal.com -ll TRACE -fn "micah" -ln "levitsky" -d "micah levitsky" -ra vdeck
-
-groovy create-user.groovy -ah http://aml28-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr seogearsca -u micah.levitsky@admaxlocal.com -ll TRACE -fn "micah" -ln "levitsky" -d "micah levitsky" -ra seogearsca
-
-
+----------------------
 101197716192
-
+-----------------------
 
 groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr acbj -u Ben.Gibson@admaxlocal.com -ll TRACE -fn "Ben" -ln "Gibson" -d "Ben Gibson" -ra acbj
-
-groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr sbgtv -u ebpeak@sbgtv.com -ll TRACE -fn "Evan" -ln "Peak" -d "Evan Peak" -ra sbgtv
 
 groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr acbj -u mukes72@gmail.com -ll TRACE -fn "Mukesh" -ln "Kumar" -d "AMLOperations User" -ra acbj
 
 groovy create-user.groovy -ah http://aml12-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr acbj -u Raghunath.Ammiraju@admaxlocal.com -ll TRACE -fn "Raghunath" -ln "Ammiraju" -d "AMLOperations User" -ra acbj
 
-
 Jacqueline Hazlett
 
 ebpeak@sbgtv.com
 jlhazlett@sbgtv.com
-
-28
-	seogearsca
-17
-.	rockaugmented
-.	urbanair
-.	urbanairbing
-.	rockbrand
-.   cisco
-.	Vca
-
-22
-.	All CMG including cmgautos and CMI
-
-aml12
-9.	Bloomnation
 
 alok.shukla@admaxlocal.com
 
@@ -309,125 +167,35 @@ groovy create-user.groovy -ah http://aml17-front1:8080/sapi/rest/ -cu kirtiranja
 
 
 Shrishail.Hindiholi@admaxlocal.com
-pinjari.miyandada@admaxlocal.com
-Shrishail.Hindiholi@admaxlocal.com
 
 tsatestca:
 
-groovy create-user.groovy -ah http://aml22-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr longislandcs -u nathan.price@admaxlocal.com -ll TRACE -fn "nathan" -ln "price" -d "Nathan Price" -ra longislandcs
-
-groovy create-user.groovy -ah http://aml22-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr atlt -u tyler.french@cmg.com -ll TRACE -fn "Tyler" -ln "French" -d "Tyler French" -ra atlt
-
-groovy create-user.groovy -ah http://aml1-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr ajctest -u Gurpreet.Singh@admaxlocal.com -ll TRACE -fn "Gurpreet" -ln "Singh" -d "Gurpreet Singh" -ra ajctest
-
-
-groovy create-user.groovy -ah http://aml22-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr atlr -u shajan.thomas@cmg.com -ll TRACE -fn "Shajan" -ln "Thomas" -d "Shajan Thomas" -ra atlr
-
-
 shajan.thomas@cmg.com
-Jenny Schlief-Morgan (jenny@admaxlocal.com ) 
- dev@lasso.media
+dev@lasso.media
 Raghunath.Ammiraju@admaxlocal.com
-Madhavi.Subbaraju@admaxlocal.com
 Shashidharan.Basavanna@admaxlocal.com
 Manjunath.Venkatesh@admaxlocal.com
 Gurpreet.Singh@admaxlocal.com
 mukes72@gmail.com	
-kamalahasan.tn@thesearchagency.com
 
 Ben.Gibson@admaxlocal.com
 nathan.price@admaxlocal.com
-alex.george@admaxlocal.com
 
 cutomer:
 Lisa.Walters@Coxinc.com
 
-
 Manjunath.Venkatesh@admaxlocal.com
 
-brittani.buckley@endurance.com
 Please activate credentials for both SeoGears and SeoGears CA for the following:
 
-Angel Lamanilao <angel.lamanilao@endurance.com>
-Braiden Aneshansley <braiden.aneshansley@endurance.com>
-Melissa Johnson Lang <melissa.johnsonlang@endurance.com>
-
-Tywaun Banks <tywaun.banks@endurance.com>
-
-mariah.pauli@endurance.com
-troy.miller@endurance.com
-ben.simpson@endurance.com 
-micah.levitsky@admaxlocal.com
-
-Tristan Burgener | tristan.burgener@endurance.com
-Alexandros Moustakas | alexandros.moustakas@endurance.com
-Stefan Crichlow | stefan.crichlow@endurance.com
-Jessika.Qualls | jessika.qualls@endurance.com
-
-Taylor Spencer - taylor.spencer@endurance.com<mailto:taylor.spencer@endurance.com> 
-Gregory Samuel - gregory.samuel@endurance 
-Edward Bannerman - edward.sextonbannerman@endurance.com<mailto:edward.sextonbannerman@endurance.com> 
-Cynthia Segura Rodriguez - cynthia.segurarodriguez@endurance.com<mailto:cynthia.segurarodriguez@endurance.com>
-
-Chelcie Augustin Weaver: chelcie.augustinweaver@endurance.com 
-Cole Aman: cole.aman@endurance.com 
-Austin Kneisley: austin.kneisley@endurance.com
-Jesse Duenas: jesse.duenas@endurance.com 
-Andrew Butterworth: andrew.butterworth@endurance.com
-
 Seogears:
-
-groovy create-user.groovy -ah http://aml26-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr seogears -u chelcie.augustinweaver@endurance.com -ll TRACE -fn "Chelcie" -ln "Augustin Weaver" -d "Chelcie Augustin Weaver" -ra seogears
-
-groovy create-user.groovy -ah http://aml26-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr seogears -u cole.aman@endurance.com -ll TRACE -fn "Cole" -ln "Aman" -d "Cole Aman" -ra seogears
-
-groovy create-user.groovy -ah http://aml26-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr seogears -u austin.kneisley@endurance.com -ll TRACE -fn "Austin" -ln "Kneisley" -d "Austin Kneisley" -ra seogears
-
-groovy create-user.groovy -ah http://aml26-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr seogears -u jesse.duenas@endurance.com -ll TRACE -fn "Jesse" -ln "Duenas" -d "Jesse Duenas" -ra seogears
-
+---------
 groovy create-user.groovy -ah http://aml26-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr seogears -u andrew.butterworth@endurance.com -ll TRACE -fn "Andrew" -ln "Butterworth" -d "Andrew Butterworth" -ra seogears
 
-
-
 Seogearsca :
-
-groovy create-user.groovy -ah http://aml28-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr seogearsca -u chelcie.augustinweaver@endurance.com -ll TRACE -fn "Chelcie" -ln "Augustin Weaver" -d "Chelcie Augustin Weaver" -ra seogearsca
-
-groovy create-user.groovy -ah http://aml28-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr seogearsca -u cole.aman@endurance.com -ll TRACE -fn "Cole" -ln "Aman" -d "Cole Aman" -ra seogearsca
-
-groovy create-user.groovy -ah http://aml28-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr seogearsca -u austin.kneisley@endurance.com -ll TRACE -fn "Austin" -ln "Kneisley" -d "Austin Kneisley" -ra seogearsca
-
-groovy create-user.groovy -ah http://aml28-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr seogearsca -u jesse.duenas@endurance.com -ll TRACE -fn "Jesse" -ln "Duenas" -d "Jesse Duenas" -ra seogearsca
+-------------
 
 groovy create-user.groovy -ah http://aml28-front1:8080/sapi/rest/ -cu kirtiranjan.sahoo@admaxlocal.com -cp Kirti@83 -cr seogearsca -u andrew.butterworth@endurance.com -ll TRACE -fn "Andrew" -ln "Butterworth" -d "Andrew Butterworth" -ra seogearsca
-
-
-sara.klosterman@endurance.com
-kara.headstream@endurance.com
-troy.miller@endurance.com
-
-tyler.rehanek@endurance.com
-azzara.wheeler@endurance.com
-nicole.garcia@endurance.com - new add
-
-Name: Ray Spraggins 
-Email: Ray.Spraggins@endurance.com
-Name: Cinera Tyler 
-Email: cinera.tyler@endurance.com
-Name: Joshua Luke 
-Email: joshua.luke@endurance.com
-Name: Alexandros Moustakas 
-Email: Alexandros.Moustakas@endurance.com
-
-Alexandros.Moustakas@endurance.com
-remove Matt.Davis@endurance.com 
-and send an invite to Matthew.Davis@endurance.com 
-Bernardo Murillo; bernardo.murillo@endurance.com
-
-Tristan Burgener | tristan.burgener@endurance.com
-Alexandros Moustakas | alexandros.moustakas@endurance.com
-Stefan Crichlow | stefan.crichlow@endurance.com
-Jessika.Qualls | jessika.qualls@endurance.com
 
 ------------------------------
 Groovy scripts (Disable User):
@@ -441,17 +209,11 @@ seogearsca:
 groovy disable-user.groovy -uuid 9e7a2034-92df-4ea7-9017-977eaddd424b -ah http://aml28-front1:8080/sapi/rest/
 
 
-groovy disable-user.groovy -uuid 85b3cfc8-7297-4c4c-9573-56430c41a04f -ah http://aml28-front1:8080/sapi/rest/
-
-
 admin
 
-jose.palmerin@endurance.com
 --------------------------------
 Order status Change: (scheduled)
 --------------------------------
-
-groovy change-order-state.groovy -ah http://aml27-front1:8080/sapi/rest/ -ll TRACE -o 74fda400-b3db-4c3f-b739-e5509107f188 -s QUOTE -ru Kirtiranjan.Sahoo@admaxlocal.com -rp 'Kirti@83' -ra yjprod
 
 groovy change-order-state.groovy -ah http://aml22-front1:8080/sapi/rest/ -ll TRACE -o ff07c51d-1349-44cb-944d-e2afc33a080a -s ARCHIVED -ru Kirtiranjan.Sahoo@admaxlocal.com -rp 'Kirti@83' -ra mia
 
@@ -470,9 +232,9 @@ groovy change-order-state.groovy -ah http://aml12-front1:8080/sapi/rest/ -ll TRA
 groovy change-order-state.groovy -ah http://aml1-front1:8080/sapi/rest/ -ll TRACE -o 0ab32ab6-a3d4-4d37-bc2c-c08b0d4a717d -s QUOTE -ru Kirtiranjan.Sahoo@thesearchagency.com -rp 'TSAindia@123' -ra tsatest
 
 
-groovy change-order-state.groovy -ah http://aml27-front1:8080/sapi/rest/ -ll TRACE -o fbf5aed7-d53e-49da-ad36-8c36998b4e65 -s QUOTE -ru Kirtiranjan.Sahoo@admaxlocal.com -rp 'Kirti@83' -ra yjprod
+groovy change-order-state.groovy -ah http://aml27-front1:8080/sapi/rest/ -ll TRACE -o d4b0a23d-7772-40c0-96e8-ecdae49e16b5 -s QUOTE -ru Kirtiranjan.Sahoo@admaxlocal.com -rp 'Kirti@83' -ra yjprod
 
-groovy change-order-state.groovy -ah http://aml27-front1:8080/sapi/rest/ -ll TRACE -o f4f8a166-3faa-484d-ac79-998a1631b117 -s SCHEDULED -ru Kirtiranjan.Sahoo@admaxlocal.com -rp 'Kirti@83' -ra yjprod
+groovy change-order-state.groovy -ah http://aml27-front1:8080/sapi/rest/ -ll TRACE -o 8ca0aa5b-5fe6-4870-9200-752d9e5e13a9 -s SCHEDULED -ru Kirtiranjan.Sahoo@admaxlocal.com -rp 'Kirti@83' -ra yjprod
 
 groovy change-order-state.groovy -ah http://aml17-front1:8080/sapi/rest/ -ll TRACE -o 96330839-5f6d-41f4-97ce-a49f6da8d0da -s QUOTE -ru Kirtiranjan.Sahoo@admaxlocal.com -rp 'Kirti@83' -ra rockaugmented
 
@@ -501,7 +263,7 @@ usage: AdRefresher
  -rc,--replace-custom               Replace ads that have been customized
  -rd,--replace-default              Replace ads that have not been
                                     customized
- -s,--sapi <arg>                    SAPI base URL (e.g.
+# -s,--sapi <arg>                    SAPI base URL (e.g.
                                     http://localhost:8080/sapi/rest/)
  -sp,--sapi-password <arg>          SAPI password
  -sr,--sapi-realm <arg>             SAPI realm
@@ -713,14 +475,8 @@ aml17-monman1
 aml1-monman1
 aml28-monman1
 
-
-accountID - rockbrand
-
-183,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,233,220,223,221,224,222,225,226,227,229,228,230,231,232,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262,263,264,265,266,267,268,269,270,271,272,273,274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290,291,292,293,294,295,296,297,298,299,300,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,329,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345,346,347,348,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,370,388,389,390,391,392,393,394,395,396,397 
-
-
 DB Backup: (mysqldump)
------------
+---------------------
 mysqldump -h aml12-mysql1 -uspike -ptar63t --socket=/var/run/mysqld-acctdb-01-write.sock --all-databases --skip-lock-tables > aml12_2020-01-20_sql_PreCeres_backup.sql
 
 mysqldump --user spike -p --host aml28-mysql1 tsacommon searchEngineAccounts > dump.sql
@@ -734,7 +490,7 @@ mysql --user spike -p --host aml28-mysql1 tsacommon < dump.sql
 
 
 
-mysql -uspike -ptar63t -haml22-mysql1 -e "select amc.description as Campaign,amcar.date,amcar.commonCarryover from \`st-tracker\`.admaxCampaigns amc join \`st-tracker\`.admaxCarryovers amcar on amcar.admaxCampaignID=amc.id where amcar.date between '2017-05-01' and '2018-04-30' into outfile '/tmp/carryover.csv' fields terminated by ',' lines terminated by '\\n'
+mysql -uspike -ptar63t -haml22-mysql1 -e "select amc.description as Campaign,amcar.date,amcar.commonCarryover from \`st-tracker\`.admaxCampaigns amc join \`st-tracker\`.admaxCarryovers amcar on amcar.admaxCampaignID=amc.id where amcar.date between '2017-05-01' and '2018-04-30' into outfile '/tmp/carryover.csv' fields terminated by ',' lines terminated by '\\n'"
 
 Generate VCA Deployed orders start and end date	:
 =================================================
@@ -835,7 +591,7 @@ BES:
 	 mkdir /var/local/tsa/log/aml-merchant-leads/
 	•Place the com.thesearchagency.datafeeds.calldata.properties file (https://bitbucket.org/tsa/aml-core/src/81363634fcc96b115dc011736044768ba44fb05a/system/environments/...  ) [aml-core / system / environments / tsa / us / dev / bidmgr / var-local-tsa-config /]
 		in /var/local/tsa/config/
-	•Place the aml-merchant-leads script  https://bitbucket.org/tsa/aml-core/src/81363634fcc96b115dc011736044768ba44fb05a/system/processing/?a... in /etc/init.d/
+	•Place the aml-merchant-leads script https://bitbucket.org/tsa/aml-core/src/81363634fcc96b115dc011736044768ba44fb05a/system/processing/?a... in /etc/init.d/
 
 	•Deploy merchant-leads
 	oExtract the tgz file to /usr/local/tsa/
@@ -859,8 +615,8 @@ stop tomcat --> stop listener --> stop jboss
 
 --------------
 Yahoo Japan :
----------------
-IF any order is in Canceled state , then run this query to change it's status to ARCHIVED.
+--------------
+IF any order is in Canceled state , then run this query to change its status to ARCHIVED.
 Mysql Query:
  update smb.orders set state='ARCHIVED' where id='098ac594-c000-452a-aaad-f5463f18bb0e';
 
